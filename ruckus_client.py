@@ -153,89 +153,76 @@ class RuckusClient:
             logger.error(f"Error making request to {url}: {e}")
             return None
 
-    def get_zones(self) -> List[Dict[str, Any]]:
-        """Get all zones"""
+    def get_zones(self, limit: int = 1000) -> List[Dict[str, Any]]:
+        """Get all zones using page/limit pagination (POST only)."""
         endpoint = "/query/zone"
-        # Try POST first (some Ruckus APIs require POST for query)
-        response = self._make_request(endpoint, method="POST", data={})
-        if not response:
-            # Fallback to GET
-            response = self._make_request(endpoint, method="GET")
-        if response and "list" in response:
-            return response["list"]
-        return []
+        zones: List[Dict[str, Any]] = []
+        page = 1
+        while True:
+            payload = {"limit": limit, "page": page}
+            response = self._make_request(endpoint, method="POST", data=payload)
+            if not response or "list" not in response:
+                break
+            batch = response.get("list", []) or []
+            zones.extend(batch)
+            if not response.get("hasMore", False):
+                break
+            page += 1
+        return zones
 
     def get_aps(
         self,
         zone_id: Optional[str] = None,
         limit: int = 1000
     ) -> List[Dict[str, Any]]:
-        """Get access points, optionally filtered by zone"""
+        """Get access points, optionally filtered by zone (POST only, page/limit)."""
         endpoint = "/query/ap"
-        data = {"listSize": limit}
-        if zone_id:
-            data["zoneId"] = zone_id
-
-        all_aps = []
-        first_index = 0
-
+        aps: List[Dict[str, Any]] = []
+        page = 1
         while True:
-            data["firstIndex"] = first_index
-            # Try POST first
-            response = self._make_request(endpoint, method="POST", data=data)
-            if not response:
-                # Fallback to GET with params
-                params = data
-                response = self._make_request(endpoint, params=params)
-
+            payload: Dict[str, Any] = {"limit": limit, "page": page}
+            if zone_id:
+                # Preferred filter style; if schema rejects, we'll retry alternative
+                payload["filters"] = [{"type": "ZONE", "value": zone_id}]
+            response = self._make_request(endpoint, method="POST", data=payload)
+            if (not response) and zone_id:
+                # Retry without filters using direct zoneId field (seen in some deployments)
+                alt_payload = {"limit": limit, "page": page, "zoneId": zone_id}
+                response = self._make_request(endpoint, method="POST", data=alt_payload)
             if not response or "list" not in response:
                 break
-
-            aps = response.get("list", [])
-            all_aps.extend(aps)
-
+            batch = response.get("list", []) or []
+            aps.extend(batch)
             if not response.get("hasMore", False):
                 break
-
-            first_index += len(aps)
-
-        return all_aps
+            page += 1
+        return aps
 
     def get_clients(
         self,
         zone_id: Optional[str] = None,
         limit: int = 1000
     ) -> List[Dict[str, Any]]:
-        """Get clients, optionally filtered by zone"""
+        """Get clients, optionally filtered by zone (POST only, page/limit)."""
         endpoint = "/query/client"
-        data = {"listSize": limit}
-        if zone_id:
-            data["zoneId"] = zone_id
-
-        all_clients = []
-        first_index = 0
-
+        clients: List[Dict[str, Any]] = []
+        page = 1
         while True:
-            data["firstIndex"] = first_index
-            # Try POST first
-            response = self._make_request(endpoint, method="POST", data=data)
-            if not response:
-                # Fallback to GET with params
-                params = data
-                response = self._make_request(endpoint, params=params)
-
+            payload: Dict[str, Any] = {"limit": limit, "page": page}
+            if zone_id:
+                payload["filters"] = [{"type": "ZONE", "value": zone_id}]
+            response = self._make_request(endpoint, method="POST", data=payload)
+            if (not response) and zone_id:
+                alt_payload = {"limit": limit, "page": page, "zoneId": zone_id}
+                response = self._make_request(endpoint, method="POST", data=alt_payload)
             if not response or "list" not in response:
                 break
-
-            clients = response.get("list", [])
-            all_clients.extend(clients)
-
+            batch = response.get("list", []) or []
+            clients.extend(batch)
             if not response.get("hasMore", False):
                 break
-
-            first_index += len(clients)
-
-        return all_clients
+            page += 1
+        return clients
 
     def get_system_inventory(self) -> List[Dict[str, Any]]:
         """Get system inventory with zone statistics"""
