@@ -4,7 +4,7 @@ This document describes the database schema for the WiFi monitoring system store
 
 ## Database Information
 
-- **Database/Bucket**: `wifi-streaming`
+- **Database/Bucket**: `demo`
 - **Organization**: `wifi-org`
 - **Retention Policy**: Default (can be configured)
 
@@ -49,7 +49,7 @@ fields: {
 
 **Query Example:**
 ```flux
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "venue")
   |> last()
@@ -102,20 +102,20 @@ fields: {
 **Query Examples:**
 ```flux
 // Get all zones
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "zone")
   |> last()
 
 // Get specific zone
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "zone")
   |> filter(fn: (r) => r["zoneId"] == "8533f41b-f651-42f3-828a-d4898c82294c")
   |> last()
 
 // Get zone time-series data
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -24h)
   |> filter(fn: (r) => r["_measurement"] == "zone")
   |> filter(fn: (r) => r["zoneId"] == "8533f41b-f651-42f3-828a-d4898c82294c")
@@ -179,28 +179,28 @@ fields: {
 **Query Examples:**
 ```flux
 // Get all APs for a zone
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "access_point")
   |> filter(fn: (r) => r["zoneId"] == "cfb621aa-341f-4e5c-bb04-f2d1c21e801e")
   |> last()
 
 // Get specific AP
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "access_point")
   |> filter(fn: (r) => r["apMac"] == "70:47:77:2F:E0:90")
   |> last()
 
 // Get offline APs
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "access_point")
   |> filter(fn: (r) => r["status"] == "offline")
   |> last()
 
 // Get AP utilization over time
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -24h)
   |> filter(fn: (r) => r["_measurement"] == "access_point")
   |> filter(fn: (r) => r["apMac"] == "70:47:77:2F:E0:90")
@@ -256,27 +256,27 @@ fields: {
 **Query Examples:**
 ```flux
 // Get all clients
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "client")
   |> last()
 
 // Get clients for a zone
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "client")
   |> filter(fn: (r) => r["zoneId"] == "cfb621aa-341f-4e5c-bb04-f2d1c21e801e")
   |> last()
 
 // Get clients for an AP
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "client")
   |> filter(fn: (r) => r["apMac"] == "70:47:77:2F:E0:90")
   |> last()
 
 // Get clients by OS type
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "client")
   |> filter(fn: (r) => r["osType"] == "iOS Phone")
@@ -310,7 +310,7 @@ fields: {
 **Query Example:**
 ```flux
 // Get OS distribution
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "os_distribution")
   |> last()
@@ -344,7 +344,7 @@ fields: {
 **Query Example:**
 ```flux
 // Get top host usage
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "host_usage")
   |> last()
@@ -393,27 +393,27 @@ fields: {
 **Query Examples:**
 ```flux
 // Get all disconnect causes
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
   |> last()
 
 // Get disconnect causes for a specific zone
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
   |> filter(fn: (r) => r["zoneId"] == "cfb621aa-341f-4e5c-bb04-f2d1c21e801e")
   |> last()
 
 // Get disconnect causes by code
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -24h)
   |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
   |> filter(fn: (r) => r["causeCode"] == "200")
   |> last()
 
 // Count disconnect causes by code
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
   |> group(columns: ["causeCode"])
@@ -428,31 +428,31 @@ from(bucket: "wifi-streaming")
 
 ```flux
 // Venue
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "venue")
   |> last()
 
 // All Zones
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "zone")
   |> last()
 
 // All APs
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "access_point")
   |> last()
 
 // All Clients
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "client")
   |> last()
 
 // All AP Disconnect Causes
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
   |> last()
@@ -462,7 +462,7 @@ from(bucket: "wifi-streaming")
 
 ```flux
 // Zone experience score over 24 hours
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -24h)
   |> filter(fn: (r) => r["_measurement"] == "zone")
   |> filter(fn: (r) => r["zoneId"] == "8533f41b-f651-42f3-828a-d4898c82294c")
@@ -470,7 +470,7 @@ from(bucket: "wifi-streaming")
   |> aggregateWindow(every: 1h, fn: mean)
 
 // AP utilization over time
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -24h)
   |> filter(fn: (r) => r["_measurement"] == "access_point")
   |> filter(fn: (r) => r["apMac"] == "70:47:77:2F:E0:90")
@@ -482,21 +482,21 @@ from(bucket: "wifi-streaming")
 
 ```flux
 // Average experience score across all zones
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "zone")
   |> filter(fn: (r) => r["_field"] == "experienceScore")
   |> mean()
 
 // Total clients across all zones
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "zone")
   |> filter(fn: (r) => r["_field"] == "clients")
   |> sum()
 
 // Count of online APs
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "access_point")
   |> filter(fn: (r) => r["status"] == "online")
@@ -533,7 +533,7 @@ query_api = client.query_api()
 
 # Query example
 query = '''
-from(bucket: "wifi-streaming")
+from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "venue")
   |> last()

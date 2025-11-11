@@ -106,7 +106,7 @@ def main():
     influx_cfg = {
         "url": "http://20.64.233.185:8086",
         "org": "wifi-org",
-        "bucket": "wifi-streaming",
+        "bucket": "demo",
         "token": (
             "vmEv3xPIBXM0iiW6rBQ8KKPZB7hdbjqbPJVtN0mrO0Cn96RhTGWP647J9K-"
             "lo-6mmB0_sQRvHLDdFgHrGb8GRQ=="
