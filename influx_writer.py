@@ -27,6 +27,51 @@ class InfluxWriter:
         self.token = token
         self.client = InfluxDBClient(url=url, token=token, org=org)
         self.write_api = self.client.write_api(write_options=SYNCHRONOUS)
+        # Ensure connectivity and bucket
+        self._check_health()
+        self._ensure_bucket_exists()
+
+    def _check_health(self) -> None:
+        """Check InfluxDB health and log status"""
+        try:
+            health = self.client.health()
+            logger.info(f"InfluxDB health: {health.status} - {health.message}")
+        except Exception as e:
+            logger.warning(f"InfluxDB health check failed: {e}")
+
+    def _ensure_bucket_exists(self) -> None:
+        """Ensure target bucket exists; create if missing"""
+        try:
+            buckets_api = self.client.buckets_api()
+            orgs_api = self.client.organizations_api()
+            # Resolve org id
+            orgs = orgs_api.find_organizations()
+            org_list = orgs if isinstance(orgs, list) else getattr(orgs, "orgs", [])
+            org_id = None
+            for o in org_list:
+                if getattr(o, "name", None) == self.org:
+                    org_id = getattr(o, "id", None)
+                    break
+            if not org_id:
+                logger.warning(f"Organization '{self.org}' not found; bucket creation skipped")
+                return
+            # Check buckets
+            found = False
+            buckets = buckets_api.find_buckets()
+            bucket_list = buckets if isinstance(buckets, list) else getattr(buckets, "buckets", [])
+            for b in bucket_list:
+                if getattr(b, "name", None) == self.bucket:
+                    found = True
+                    break
+            if not found:
+                from influxdb_client.domain.bucket import Bucket
+                from influxdb_client.domain.bucket_retention_rules import BucketRetentionRules
+                retention_rules = BucketRetentionRules(every_seconds=0)
+                bucket_obj = Bucket(name=self.bucket, retention_rules=[retention_rules], org_id=org_id)
+                buckets_api.create_bucket(bucket=bucket_obj)
+                logger.info(f"Created InfluxDB bucket: {self.bucket}")
+        except Exception as e:
+            logger.warning(f"Bucket ensure failed: {e}")
         
     def write_points(self, points: List[Point]) -> bool:
         """Write multiple points to InfluxDB"""

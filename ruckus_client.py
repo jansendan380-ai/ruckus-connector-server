@@ -92,6 +92,10 @@ class RuckusClient:
         url = f"{self.base_api_url}{endpoint}"
 
         try:
+            # Ensure authenticated session
+            if not self._authenticated:
+                self._login()
+
             if method == "GET":
                 response = self.session.get(
                     url, params=params, timeout=self.timeout
@@ -105,10 +109,24 @@ class RuckusClient:
 
             # Log response details for debugging
             if response.status_code == 401:
-                logger.error(
-                    f"Authentication failed (401) for {url}. "
-                    f"Response: {response.text[:200]}"
-                )
+                # Attempt re-authentication once and retry
+                logger.warning("401 received; attempting re-authentication and retry...")
+                self._authenticated = False
+                if self._login():
+                    if method == "GET":
+                        response = self.session.get(
+                            url, params=params, timeout=self.timeout
+                        )
+                    else:
+                        response = self.session.post(
+                            url, json=data, params=params, timeout=self.timeout
+                        )
+                else:
+                    logger.error(
+                        f"Re-authentication failed. Response: {response.text[:200]}"
+                    )
+                    response.raise_for_status()
+
             elif response.status_code >= 400:
                 logger.warning(
                     f"Request returned {response.status_code} for {url}. "
