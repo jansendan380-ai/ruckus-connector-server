@@ -4,11 +4,12 @@ Orchestrates data collection from Ruckus and writing to InfluxDB
 """
 import logging
 import time
-from datetime import datetime, timedelta
-from typing import Dict, List, Any, Optional
+from datetime import datetime
+from typing import Dict, List, Any
 from ruckus_client import RuckusClient
 from influx_writer import InfluxWriter
 from transformers import DataTransformer
+from cause_code_generator import CauseCodeGenerator
 from influxdb_client import Point
 
 logging.basicConfig(
@@ -30,6 +31,7 @@ class WiFiConnector:
         self.ruckus = ruckus_client
         self.influx = influx_writer
         self.transformer = DataTransformer()
+        self.cause_code_generator = CauseCodeGenerator()
         self.collection_interval = collection_interval
         self.running = False
     
@@ -84,7 +86,31 @@ class WiFiConnector:
             # 8. Calculate host usage
             host_usage = self.transformer.calculate_host_usage(frontend_clients)
             
-            # 9. Write to InfluxDB
+            # 9. Generate cause codes for disconnected APs
+            disconnected_aps = []
+            for ap in all_aps:
+                # Check multiple possible status fields
+                status = ap.get("status", "").lower()
+                ap_connection_state = ap.get("apConnectionState", "").lower()
+                connection_state = ap.get("connectionState", "").lower()
+                
+                # Consider AP offline if any of these indicate offline
+                is_offline = (
+                    status == "offline" or
+                    ap_connection_state == "offline" or
+                    connection_state == "offline" or
+                    (status not in ["online", "connected"] and
+                     ap_connection_state not in ["online", "connected"] and
+                     connection_state not in ["online", "connected"])
+                )
+                if is_offline:
+                    disconnected_aps.append(ap)
+            
+            ap_cause_codes = self.cause_code_generator.generate_cause_codes_for_aps(disconnected_aps)
+            if ap_cause_codes:
+                logger.info(f"Generated cause codes for {len(ap_cause_codes)} disconnected APs")
+            
+            # 10. Write to InfluxDB
             points = []
             
             # Write venue data
@@ -104,6 +130,9 @@ class WiFiConnector:
             
             # Write host usage
             points.extend(self._create_host_usage_points(host_usage, timestamp))
+            
+            # Write AP cause codes
+            points.extend(self._create_ap_cause_code_points(ap_cause_codes, timestamp))
             
             # Write all points
             if points:
@@ -188,8 +217,9 @@ class WiFiConnector:
         point = point.field("totalZones", venue_data.get("totalZones", 0))
         point = point.field("totalAPs", venue_data.get("totalAPs", 0))
         point = point.field("totalClients", venue_data.get("totalClients", 0))
-        point = point.field("avgExperienceScore", venue_data.get("avgExperienceScore", 0))
-        point = point.field("slaCompliance", venue_data.get("slaCompliance", 0))
+        # Ensure float types for decimal fields
+        point = point.field("avgExperienceScore", float(venue_data.get("avgExperienceScore", 0.0)))
+        point = point.field("slaCompliance", float(venue_data.get("slaCompliance", 0.0)))
         points.append(point)
         
         return points
@@ -207,12 +237,13 @@ class WiFiConnector:
             point = point.field("connectedAPs", zone.get("connectedAPs", 0))
             point = point.field("disconnectedAPs", zone.get("disconnectedAPs", 0))
             point = point.field("clients", zone.get("clients", 0))
-            point = point.field("apAvailability", zone.get("apAvailability", 0))
-            point = point.field("clientsPerAP", zone.get("clientsPerAP", 0))
-            point = point.field("experienceScore", zone.get("experienceScore", 0))
-            point = point.field("utilization", zone.get("utilization", 0))
-            point = point.field("rxDesense", zone.get("rxDesense", 0))
-            point = point.field("netflixScore", zone.get("netflixScore", 0))
+            # Ensure float types for decimal fields
+            point = point.field("apAvailability", float(zone.get("apAvailability", 0.0)))
+            point = point.field("clientsPerAP", float(zone.get("clientsPerAP", 0.0)))
+            point = point.field("experienceScore", float(zone.get("experienceScore", 0.0)))
+            point = point.field("utilization", float(zone.get("utilization", 0.0)))
+            point = point.field("rxDesense", float(zone.get("rxDesense", 0.0)))
+            point = point.field("netflixScore", float(zone.get("netflixScore", 0.0)))
             points.append(point)
         
         return points
@@ -234,10 +265,11 @@ class WiFiConnector:
             point = point.field("clientCount", ap.get("numClients", 0) or 0)
             point = point.field("clientCount24G", ap.get("numClients24G", 0) or 0)
             point = point.field("clientCount5G", ap.get("numClients5G", 0) or 0)
-            point = point.field("airtime24G", ap.get("airtime24G", 0) or 0)
-            point = point.field("airtime5G", ap.get("airtime5G", 0) or 0)
-            point = point.field("noise24G", ap.get("noise24G", 0) or 0)
-            point = point.field("noise5G", ap.get("noise5G", 0) or 0)
+            # Ensure float types for decimal fields
+            point = point.field("airtime24G", float(ap.get("airtime24G", 0) or 0))
+            point = point.field("airtime5G", float(ap.get("airtime5G", 0) or 0))
+            point = point.field("noise24G", float(ap.get("noise24G", 0) or 0))
+            point = point.field("noise5G", float(ap.get("noise5G", 0) or 0))
             point = point.field("channel24G", ap.get("channel24gValue", 0) or 0)
             point = point.field("channel5G", ap.get("channel50gValue", 0) or 0)
             point = point.field("eirp24G", ap.get("eirp24G", 0) or 0)
@@ -264,10 +296,11 @@ class WiFiConnector:
             point = point.field("txBytes", client.get("txBytes", 0) or 0)
             point = point.field("rxBytes", client.get("rxBytes", 0) or 0)
             point = point.field("txRxBytes", client.get("txRxBytes", 0) or 0)
-            point = point.field("rssi", client.get("rssi", 0) or 0)
-            point = point.field("snr", client.get("snr", 0) or 0)
-            point = point.field("uplinkRate", client.get("uplinkRate", 0) or 0)
-            point = point.field("downlinkRate", client.get("downlinkRate", 0) or 0)
+            # Ensure float types for decimal fields (rssi/snr can be negative decimals)
+            point = point.field("rssi", float(client.get("rssi", 0) or 0))
+            point = point.field("snr", float(client.get("snr", 0) or 0))
+            point = point.field("uplinkRate", float(client.get("uplinkRate", 0) or 0))
+            point = point.field("downlinkRate", float(client.get("downlinkRate", 0) or 0))
             
             points.append(point)
         
@@ -285,7 +318,8 @@ class WiFiConnector:
             point = Point("os_distribution")
             point = point.time(timestamp)
             point = point.tag("os", dist.get("os", ""))
-            point = point.field("percentage", dist.get("percentage", 0))
+            # Ensure float type for percentage
+            point = point.field("percentage", float(dist.get("percentage", 0.0)))
             points.append(point)
         
         return points
@@ -302,7 +336,35 @@ class WiFiConnector:
             point = Point("host_usage")
             point = point.time(timestamp)
             point = point.tag("hostname", host.get("hostname", ""))
-            point = point.field("dataUsage", host.get("dataUsage", 0))
+            # Ensure float type for dataUsage
+            point = point.field("dataUsage", float(host.get("dataUsage", 0.0)))
+            points.append(point)
+        
+        return points
+    
+    def _create_ap_cause_code_points(
+        self,
+        cause_codes: List[Dict[str, Any]],
+        timestamp: datetime
+    ) -> List[Point]:
+        """Create InfluxDB points for AP disconnect cause codes"""
+        points = []
+        
+        for cause_data in cause_codes:
+            point = Point("ap_disconnect_cause")
+            point = point.time(timestamp)
+            point = point.tag("apMac", cause_data.get("apMac", ""))
+            point = point.tag("apName", cause_data.get("apName", ""))
+            point = point.tag("zoneId", cause_data.get("zoneId", ""))
+            point = point.tag("zoneName", cause_data.get("zoneName", ""))
+            point = point.tag("model", cause_data.get("model", ""))
+            point = point.tag("causeCode", str(cause_data.get("causeCode", 0)))
+            
+            point = point.field("causeCode", cause_data.get("causeCode", 0))
+            point = point.field("causeDescription", cause_data.get("causeDescription", ""))
+            # Ensure float type for impactScore
+            point = point.field("impactScore", float(cause_data.get("impactScore", 0.0)))
+            
             points.append(point)
         
         return points

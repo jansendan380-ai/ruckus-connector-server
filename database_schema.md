@@ -354,6 +354,74 @@ from(bucket: "wifi-streaming")
 
 ---
 
+### 7. `ap_disconnect_cause`
+
+AP disconnect cause codes for offline access points.
+
+**Tags:**
+- `apMac` (string) - AP MAC address (unique identifier)
+- `apName` (string) - AP device name
+- `zoneId` (string) - Zone identifier
+- `zoneName` (string) - Zone name
+- `model` (string) - AP model (e.g., "R750", "H550")
+- `causeCode` (string) - Disconnect cause code identifier
+
+**Fields:**
+- `causeCode` (integer) - 802.11 disconnect cause code
+- `causeDescription` (string) - Human-readable description
+- `impactScore` (float) - Impact score (0-100)
+
+**Example Point:**
+```
+measurement: ap_disconnect_cause
+time: 2024-01-15T09:24:00Z
+tags: {
+  apMac: "70:47:77:2F:E0:90",
+  apName: "ap0031-POOL",
+  zoneId: "cfb621aa-341f-4e5c-bb04-f2d1c21e801e",
+  zoneName: "GA29532-P - Signal House",
+  model: "R750",
+  causeCode: "200"
+}
+fields: {
+  causeCode: 200,
+  causeDescription: "AP lost heartbeat with controller",
+  impactScore: 45.0
+}
+```
+
+**Query Examples:**
+```flux
+// Get all disconnect causes
+from(bucket: "wifi-streaming")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
+  |> last()
+
+// Get disconnect causes for a specific zone
+from(bucket: "wifi-streaming")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
+  |> filter(fn: (r) => r["zoneId"] == "cfb621aa-341f-4e5c-bb04-f2d1c21e801e")
+  |> last()
+
+// Get disconnect causes by code
+from(bucket: "wifi-streaming")
+  |> range(start: -24h)
+  |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
+  |> filter(fn: (r) => r["causeCode"] == "200")
+  |> last()
+
+// Count disconnect causes by code
+from(bucket: "wifi-streaming")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
+  |> group(columns: ["causeCode"])
+  |> count()
+```
+
+---
+
 ## Common Query Patterns
 
 ### Get Latest Data for All Measurements
@@ -381,6 +449,12 @@ from(bucket: "wifi-streaming")
 from(bucket: "wifi-streaming")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "client")
+  |> last()
+
+// All AP Disconnect Causes
+from(bucket: "wifi-streaming")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")
   |> last()
 ```
 
