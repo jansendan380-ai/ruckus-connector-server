@@ -160,3 +160,4 @@ class RuckusClient:
         except Exception as e:
             logger.error(f"Connection test failed: {e}")
             return False
+
