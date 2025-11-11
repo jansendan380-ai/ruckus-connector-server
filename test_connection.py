@@ -123,25 +123,51 @@ def test_connection():
     print()
 
     # Test 5: Try login endpoint (if exists)
-    print("Test 5: Checking for login endpoint...")
-    login_urls = [
-        f"{base_url}/wsg/api/public/v9_1/login",
-        f"{base_url}/wsg/api/public/v9_1/session",
-        f"{base_url}/wsg/api/public/v9_1/auth",
-    ]
-    for login_url in login_urls:
-        try:
-            response = requests.post(
-                login_url,
-                json={"username": username, "password": password},
-                verify=False,
+    print("Test 5: Testing login/session endpoint...")
+    session_url = f"{base_url}/wsg/api/public/v9_1/session"
+    
+    # Test POST with JSON credentials
+    try:
+        response = requests.post(
+            session_url,
+            json={"username": username, "password": password},
+            verify=False,
+            timeout=10
+        )
+        print(f"  POST {session_url} (JSON): {response.status_code}")
+        if response.status_code == 200:
+            print(f"    ✓ Login successful!")
+            print(f"    Cookies: {dict(response.cookies)}")
+            # Try using this session
+            session = requests.Session()
+            session.cookies.update(response.cookies)
+            session.verify = False
+            test_response = session.get(
+                f"{base_url}/wsg/api/public/v9_1/controller",
                 timeout=10
             )
-            print(f"  {login_url}: {response.status_code}")
-            if response.status_code != 404:
-                print(f"    Response: {response.text[:200]}")
-        except Exception as e:
-            print(f"  {login_url}: Error - {e}")
+            print(f"    Test API call with session: {test_response.status_code}")
+            if test_response.status_code == 200:
+                print(f"    ✓ Session works for API calls!")
+        else:
+            print(f"    Response: {response.text[:200]}")
+    except Exception as e:
+        print(f"  Error: {e}")
+    
+    # Test POST with Basic Auth
+    try:
+        response = requests.post(
+            session_url,
+            auth=HTTPBasicAuth(username, password),
+            verify=False,
+            timeout=10
+        )
+        print(f"  POST {session_url} (Basic Auth): {response.status_code}")
+        if response.status_code == 200:
+            print(f"    ✓ Login successful with Basic Auth!")
+            print(f"    Cookies: {dict(response.cookies)}")
+    except Exception as e:
+        print(f"  Error: {e}")
     print()
 
     # Test 6: Test other endpoints

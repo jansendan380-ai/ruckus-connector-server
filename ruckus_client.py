@@ -35,8 +35,51 @@ class RuckusClient:
         api_path = f"/wsg/api/public/{self.api_version}"
         self.base_api_url = f"{self.base_url}{api_path}"
         self.session = requests.Session()
-        self.session.auth = HTTPBasicAuth(username, password)
         self.session.verify = verify_ssl
+        self._authenticated = False
+        self._login()
+
+    def _login(self) -> bool:
+        """Login to Ruckus API and establish session"""
+        login_url = f"{self.base_api_url}/session"
+        
+        try:
+            # Try POST with credentials
+            response = self.session.post(
+                login_url,
+                json={
+                    "username": self.username,
+                    "password": self.password
+                },
+                timeout=self.timeout
+            )
+            
+            if response.status_code == 200:
+                self._authenticated = True
+                logger.info("Successfully authenticated with Ruckus API")
+                return True
+            
+            # Try Basic Auth approach
+            response = self.session.post(
+                login_url,
+                auth=HTTPBasicAuth(self.username, self.password),
+                timeout=self.timeout
+            )
+            
+            if response.status_code == 200:
+                self._authenticated = True
+                logger.info("Successfully authenticated with Ruckus API (Basic Auth)")
+                return True
+            
+            logger.error(
+                f"Login failed with status {response.status_code}: "
+                f"{response.text[:200]}"
+            )
+            return False
+            
+        except Exception as e:
+            logger.error(f"Login error: {e}")
+            return False
 
     def _make_request(
         self,
@@ -91,7 +134,11 @@ class RuckusClient:
     def get_zones(self) -> List[Dict[str, Any]]:
         """Get all zones"""
         endpoint = "/query/zone"
-        response = self._make_request(endpoint)
+        # Try POST first (some Ruckus APIs require POST for query)
+        response = self._make_request(endpoint, method="POST", data={})
+        if not response:
+            # Fallback to GET
+            response = self._make_request(endpoint, method="GET")
         if response and "list" in response:
             return response["list"]
         return []
@@ -103,16 +150,21 @@ class RuckusClient:
     ) -> List[Dict[str, Any]]:
         """Get access points, optionally filtered by zone"""
         endpoint = "/query/ap"
-        params = {"listSize": limit}
+        data = {"listSize": limit}
         if zone_id:
-            params["zoneId"] = zone_id
+            data["zoneId"] = zone_id
 
         all_aps = []
         first_index = 0
 
         while True:
-            params["firstIndex"] = first_index
-            response = self._make_request(endpoint, params=params)
+            data["firstIndex"] = first_index
+            # Try POST first
+            response = self._make_request(endpoint, method="POST", data=data)
+            if not response:
+                # Fallback to GET with params
+                params = data
+                response = self._make_request(endpoint, params=params)
 
             if not response or "list" not in response:
                 break
@@ -134,16 +186,21 @@ class RuckusClient:
     ) -> List[Dict[str, Any]]:
         """Get clients, optionally filtered by zone"""
         endpoint = "/query/client"
-        params = {"listSize": limit}
+        data = {"listSize": limit}
         if zone_id:
-            params["zoneId"] = zone_id
+            data["zoneId"] = zone_id
 
         all_clients = []
         first_index = 0
 
         while True:
-            params["firstIndex"] = first_index
-            response = self._make_request(endpoint, params=params)
+            data["firstIndex"] = first_index
+            # Try POST first
+            response = self._make_request(endpoint, method="POST", data=data)
+            if not response:
+                # Fallback to GET with params
+                params = data
+                response = self._make_request(endpoint, params=params)
 
             if not response or "list" not in response:
                 break
