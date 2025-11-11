@@ -163,8 +163,9 @@ class CauseCodeGenerator:
         if ap_data:
             # If AP has been offline for a long time, more likely to be network/power issue
             # This is a simplified heuristic
-            model = ap_data.get("model", "").upper()
-            if "T" in model or "H" in model:  # Outdoor/Industrial models
+            model = ap_data.get("model") or ""
+            model = str(model).upper() if model else ""
+            if model and ("T" in model or "H" in model):  # Outdoor/Industrial models
                 # More likely to have power/network issues
                 if random.random() < 0.3:
                     power_codes = [c for c in self.CAUSE_CODES if "power" in c["description"].lower() or 
@@ -196,17 +197,26 @@ class CauseCodeGenerator:
         cause_codes = []
         
         for ap in disconnected_aps:
-            # Handle different field name variations
-            ap_mac = (ap.get("apMac", "") or 
-                     ap.get("mac", "") or 
-                     ap.get("apMacAddress", "") or
-                     ap.get("macAddress", ""))
-            ap_name = (ap.get("deviceName", "") or 
-                      ap.get("name", "") or
-                      ap.get("apName", ""))
-            zone_id = ap.get("zoneId", "")
-            zone_name = ap.get("zoneName", "")
-            model = ap.get("model", "")
+            # Handle different field name variations, ensuring None values become empty strings
+            ap_mac = (ap.get("apMac") or 
+                     ap.get("mac") or 
+                     ap.get("apMacAddress") or
+                     ap.get("macAddress") or "")
+            ap_mac = str(ap_mac) if ap_mac else ""
+            
+            ap_name = (ap.get("deviceName") or 
+                      ap.get("name") or
+                      ap.get("apName") or "")
+            ap_name = str(ap_name) if ap_name else ""
+            
+            zone_id = ap.get("zoneId") or ""
+            zone_id = str(zone_id) if zone_id else ""
+            
+            zone_name = ap.get("zoneName") or ""
+            zone_name = str(zone_name) if zone_name else ""
+            
+            model = ap.get("model") or ""
+            model = str(model) if model else ""
             
             # Generate cause code
             cause_code = self.generate_cause_code(ap)
