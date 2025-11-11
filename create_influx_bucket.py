@@ -33,9 +33,14 @@ def create_bucket():
         print("Getting organization ID...")
         orgs_api = client.organizations_api()
         organizations = orgs_api.find_organizations()
+        org_list = (
+            organizations
+            if isinstance(organizations, list)
+            else getattr(organizations, "orgs", [])
+        )
         org_id = None
 
-        for org_item in organizations.orgs:
+        for org_item in org_list:
             if org_item.name == org:
                 org_id = org_item.id
                 print(f"  ✓ Found organization '{org}' (ID: {org_id})")
@@ -44,7 +49,7 @@ def create_bucket():
         if not org_id:
             print(f"  ✗ Organization '{org}' not found!")
             print(f"  Available organizations:")
-            for org_item in organizations.orgs:
+            for org_item in org_list:
                 print(f"    - {org_item.name} (ID: {org_item.id})")
             client.close()
             return
@@ -52,9 +57,14 @@ def create_bucket():
         # Check if bucket exists
         print("\nChecking if bucket exists...")
         buckets = buckets_api.find_buckets()
+        bucket_list = (
+            buckets
+            if isinstance(buckets, list)
+            else getattr(buckets, "buckets", [])
+        )
         existing_bucket = None
 
-        for bucket in buckets.buckets:
+        for bucket in bucket_list:
             if bucket.name == bucket_name:
                 existing_bucket = bucket
                 break
