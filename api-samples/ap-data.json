@@ -1,0 +1,391 @@
+{
+  "total": 12,
+  "list": [
+    {
+      "mac": "AA:BB:CC:11:22:33",
+      "name": "AP-HQ-01",
+      "model": "R750",
+      "status": "online",
+      "ip": "192.168.1.101",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.0.0.1234",
+      "serialNumber": "1234567890",
+      "clientCount": 28,
+      "channelUtilization": 65,
+      "airtimeUtilization": 72,
+      "cpuUtilization": 45,
+      "memoryUtilization": 68,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 36,
+          "txPower": 20,
+          "noiseFloor": -95,
+          "clientCount": 25
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 6,
+          "txPower": 18,
+          "noiseFloor": -90,
+          "clientCount": 3
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:34",
+      "name": "AP-HQ-02",
+      "model": "R850",
+      "status": "online",
+      "ip": "192.168.1.102",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.0.0.1235",
+      "serialNumber": "1234567891",
+      "clientCount": 35,
+      "channelUtilization": 72,
+      "airtimeUtilization": 78,
+      "cpuUtilization": 52,
+      "memoryUtilization": 71,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 40,
+          "txPower": 21,
+          "noiseFloor": -94,
+          "clientCount": 32
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 11,
+          "txPower": 19,
+          "noiseFloor": -89,
+          "clientCount": 3
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:35",
+      "name": "AP-HQ-03",
+      "model": "T350",
+      "status": "online",
+      "ip": "192.168.1.103",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.0.9.0.1200",
+      "serialNumber": "1234567892",
+      "clientCount": 22,
+      "channelUtilization": 58,
+      "airtimeUtilization": 65,
+      "cpuUtilization": 38,
+      "memoryUtilization": 62,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 44,
+          "txPower": 20,
+          "noiseFloor": -96,
+          "clientCount": 20
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 1,
+          "txPower": 17,
+          "noiseFloor": -91,
+          "clientCount": 2
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:36",
+      "name": "AP-HQ-04",
+      "model": "R750",
+      "status": "offline",
+      "ip": "192.168.1.104",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.0.0.1234",
+      "serialNumber": "1234567893",
+      "clientCount": 0,
+      "channelUtilization": 0,
+      "airtimeUtilization": 0,
+      "cpuUtilization": 0,
+      "memoryUtilization": 0,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 48,
+          "txPower": 0,
+          "noiseFloor": 0,
+          "clientCount": 0
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 6,
+          "txPower": 0,
+          "noiseFloor": 0,
+          "clientCount": 0
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:37",
+      "name": "AP-HQ-05",
+      "model": "T370",
+      "status": "online",
+      "ip": "192.168.1.105",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.1.0.1240",
+      "serialNumber": "1234567894",
+      "clientCount": 31,
+      "channelUtilization": 69,
+      "airtimeUtilization": 75,
+      "cpuUtilization": 48,
+      "memoryUtilization": 70,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 149,
+          "txPower": 22,
+          "noiseFloor": -93,
+          "clientCount": 28
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 11,
+          "txPower": 18,
+          "noiseFloor": -88,
+          "clientCount": 3
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:38",
+      "name": "AP-HQ-06",
+      "model": "H550",
+      "status": "online",
+      "ip": "192.168.1.106",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.0.8.0.1199",
+      "serialNumber": "1234567895",
+      "clientCount": 19,
+      "channelUtilization": 55,
+      "airtimeUtilization": 62,
+      "cpuUtilization": 35,
+      "memoryUtilization": 59,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 153,
+          "txPower": 19,
+          "noiseFloor": -97,
+          "clientCount": 17
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 1,
+          "txPower": 16,
+          "noiseFloor": -92,
+          "clientCount": 2
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:39",
+      "name": "AP-HQ-07",
+      "model": "R750",
+      "status": "online",
+      "ip": "192.168.1.107",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.0.0.1234",
+      "serialNumber": "1234567896",
+      "clientCount": 27,
+      "channelUtilization": 64,
+      "airtimeUtilization": 71,
+      "cpuUtilization": 44,
+      "memoryUtilization": 67,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 157,
+          "txPower": 20,
+          "noiseFloor": -95,
+          "clientCount": 24
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 6,
+          "txPower": 18,
+          "noiseFloor": -90,
+          "clientCount": 3
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:40",
+      "name": "AP-HQ-08",
+      "model": "R850",
+      "status": "online",
+      "ip": "192.168.1.108",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.0.0.1235",
+      "serialNumber": "1234567897",
+      "clientCount": 33,
+      "channelUtilization": 70,
+      "airtimeUtilization": 76,
+      "cpuUtilization": 50,
+      "memoryUtilization": 72,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 161,
+          "txPower": 21,
+          "noiseFloor": -94,
+          "clientCount": 30
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 11,
+          "txPower": 19,
+          "noiseFloor": -89,
+          "clientCount": 3
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:41",
+      "name": "AP-HQ-09",
+      "model": "T350",
+      "status": "online",
+      "ip": "192.168.1.109",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.0.9.0.1200",
+      "serialNumber": "1234567898",
+      "clientCount": 24,
+      "channelUtilization": 61,
+      "airtimeUtilization": 68,
+      "cpuUtilization": 41,
+      "memoryUtilization": 64,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 36,
+          "txPower": 20,
+          "noiseFloor": -96,
+          "clientCount": 22
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 1,
+          "txPower": 17,
+          "noiseFloor": -91,
+          "clientCount": 2
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:42",
+      "name": "AP-HQ-10",
+      "model": "R750",
+      "status": "online",
+      "ip": "192.168.1.110",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.0.0.1234",
+      "serialNumber": "1234567899",
+      "clientCount": 29,
+      "channelUtilization": 66,
+      "airtimeUtilization": 73,
+      "cpuUtilization": 46,
+      "memoryUtilization": 69,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 40,
+          "txPower": 20,
+          "noiseFloor": -95,
+          "clientCount": 26
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 6,
+          "txPower": 18,
+          "noiseFloor": -90,
+          "clientCount": 3
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:43",
+      "name": "AP-HQ-11",
+      "model": "T370",
+      "status": "online",
+      "ip": "192.168.1.111",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.1.1.0.1240",
+      "serialNumber": "1234567900",
+      "clientCount": 26,
+      "channelUtilization": 63,
+      "airtimeUtilization": 70,
+      "cpuUtilization": 43,
+      "memoryUtilization": 66,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 44,
+          "txPower": 21,
+          "noiseFloor": -94,
+          "clientCount": 23
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 11,
+          "txPower": 18,
+          "noiseFloor": -89,
+          "clientCount": 3
+        }
+      ]
+    },
+    {
+      "mac": "AA:BB:CC:11:22:44",
+      "name": "AP-HQ-12",
+      "model": "H550",
+      "status": "offline",
+      "ip": "192.168.1.112",
+      "zoneId": "zone-001",
+      "zoneName": "BC83386-P - Dogwood",
+      "firmwareVersion": "6.0.8.0.1199",
+      "serialNumber": "1234567901",
+      "clientCount": 0,
+      "channelUtilization": 0,
+      "airtimeUtilization": 0,
+      "cpuUtilization": 0,
+      "memoryUtilization": 0,
+      "radios": [
+        {
+          "band": "5GHz",
+          "channel": 48,
+          "txPower": 0,
+          "noiseFloor": 0,
+          "clientCount": 0
+        },
+        {
+          "band": "2.4GHz",
+          "channel": 6,
+          "txPower": 0,
+          "noiseFloor": 0,
+          "clientCount": 0
+        }
+      ]
+    }
+  ]
+}
+
+

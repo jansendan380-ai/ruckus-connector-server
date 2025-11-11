@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": "2024-01-15T09:24:00Z",
+    "value": 85.5,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:25:00Z",
+    "value": 85.8,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:26:00Z",
+    "value": 86.2,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:27:00Z",
+    "value": 86.5,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:28:00Z",
+    "value": 86.8,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:29:00Z",
+    "value": 87.1,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:30:00Z",
+    "value": 87.4,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:31:00Z",
+    "value": 87.6,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:32:00Z",
+    "value": 87.8,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:33:00Z",
+    "value": 88.0,
+    "zone": "BC83386-P - Dogwood"
+  },
+  {
+    "timestamp": "2024-01-15T09:24:00Z",
+    "value": 82.1,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:25:00Z",
+    "value": 82.3,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:26:00Z",
+    "value": 82.5,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:27:00Z",
+    "value": 82.7,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:28:00Z",
+    "value": 82.9,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:29:00Z",
+    "value": 83.1,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:30:00Z",
+    "value": 83.3,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:31:00Z",
+    "value": 83.5,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:32:00Z",
+    "value": 83.7,
+    "zone": "CA28283 - Ventana Residences"
+  },
+  {
+    "timestamp": "2024-01-15T09:33:00Z",
+    "value": 83.9,
+    "zone": "CA28283 - Ventana Residences"
+  }
+]
+
+

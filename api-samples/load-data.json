@@ -1,0 +1,420 @@
+{
+  "bands": [
+    {
+      "band": "2.4G",
+      "color": "#1E3A5F",
+      "data": [
+        {
+          "timestamp": "2024-01-15T09:24:00Z",
+          "band24G": 0.30,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:25:00Z",
+          "band24G": 0.32,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:26:00Z",
+          "band24G": 0.35,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:27:00Z",
+          "band24G": 0.38,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:28:00Z",
+          "band24G": 0.42,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:29:00Z",
+          "band24G": 0.46,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:30:00Z",
+          "band24G": 0.50,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:31:00Z",
+          "band24G": 0.52,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:32:00Z",
+          "band24G": 0.50,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:33:00Z",
+          "band24G": 0.48,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:34:00Z",
+          "band24G": 0.45,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:35:00Z",
+          "band24G": 0.40,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:36:00Z",
+          "band24G": 0.35,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:37:00Z",
+          "band24G": 0.30,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:38:00Z",
+          "band24G": 0.25,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:39:00Z",
+          "band24G": 0.20,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:40:00Z",
+          "band24G": 0.15,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:41:00Z",
+          "band24G": 0.12,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:42:00Z",
+          "band24G": 0.10,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:43:00Z",
+          "band24G": 0.08,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:44:00Z",
+          "band24G": 0.06,
+          "band5G": 0,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:45:00Z",
+          "band24G": 0.05,
+          "band5G": 0,
+          "band6G5G": 0
+        }
+      ]
+    },
+    {
+      "band": "5G",
+      "color": "#10B981",
+      "data": [
+        {
+          "timestamp": "2024-01-15T09:24:00Z",
+          "band24G": 0,
+          "band5G": 0.25,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:25:00Z",
+          "band24G": 0,
+          "band5G": 0.26,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:26:00Z",
+          "band24G": 0,
+          "band5G": 0.28,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:27:00Z",
+          "band24G": 0,
+          "band5G": 0.30,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:28:00Z",
+          "band24G": 0,
+          "band5G": 0.32,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:29:00Z",
+          "band24G": 0,
+          "band5G": 0.34,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:30:00Z",
+          "band24G": 0,
+          "band5G": 0.36,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:31:00Z",
+          "band24G": 0,
+          "band5G": 0.38,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:32:00Z",
+          "band24G": 0,
+          "band5G": 0.36,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:33:00Z",
+          "band24G": 0,
+          "band5G": 0.34,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:34:00Z",
+          "band24G": 0,
+          "band5G": 0.32,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:35:00Z",
+          "band24G": 0,
+          "band5G": 0.28,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:36:00Z",
+          "band24G": 0,
+          "band5G": 0.25,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:37:00Z",
+          "band24G": 0,
+          "band5G": 0.22,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:38:00Z",
+          "band24G": 0,
+          "band5G": 0.18,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:39:00Z",
+          "band24G": 0,
+          "band5G": 0.15,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:40:00Z",
+          "band24G": 0,
+          "band5G": 0.12,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:41:00Z",
+          "band24G": 0,
+          "band5G": 0.10,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:42:00Z",
+          "band24G": 0,
+          "band5G": 0.08,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:43:00Z",
+          "band24G": 0,
+          "band5G": 0.06,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:44:00Z",
+          "band24G": 0,
+          "band5G": 0.05,
+          "band6G5G": 0
+        },
+        {
+          "timestamp": "2024-01-15T09:45:00Z",
+          "band24G": 0,
+          "band5G": 0.04,
+          "band6G5G": 0
+        }
+      ]
+    },
+    {
+      "band": "6G/5G",
+      "color": "#3B82F6",
+      "data": [
+        {
+          "timestamp": "2024-01-15T09:24:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:25:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:26:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:27:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:28:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:29:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:30:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:31:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:32:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:33:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:34:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:35:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:36:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:37:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:38:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:39:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:40:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:41:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:42:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:43:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:44:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        },
+        {
+          "timestamp": "2024-01-15T09:45:00Z",
+          "band24G": 0,
+          "band5G": 0,
+          "band6G5G": 0.02
+        }
+      ]
+    }
+  ]
+}
+
+

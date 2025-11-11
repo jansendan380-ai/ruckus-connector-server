@@ -1,0 +1,49 @@
+[
+  {
+    "id": "anomaly-001",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "type": "poor_experience",
+    "severity": "critical",
+    "description": "Poor experience score: 54.6",
+    "affectedZone": "FL21908-P - Pier Sixty-Six",
+    "metric": "experience_score"
+  },
+  {
+    "id": "anomaly-002",
+    "timestamp": "2024-01-15T09:15:00Z",
+    "type": "poor_experience",
+    "severity": "critical",
+    "description": "Poor experience score: 56.6",
+    "affectedZone": "TN21944-P - Opus East Memphis",
+    "metric": "experience_score"
+  },
+  {
+    "id": "anomaly-003",
+    "timestamp": "2024-01-15T08:45:00Z",
+    "type": "poor_experience",
+    "severity": "critical",
+    "description": "Poor experience score: 56.0",
+    "affectedZone": "FL28243-P - Imperial Village",
+    "metric": "experience_score"
+  },
+  {
+    "id": "anomaly-004",
+    "timestamp": "2024-01-15T07:20:00Z",
+    "type": "poor_experience",
+    "severity": "critical",
+    "description": "Poor experience score: 26.7",
+    "affectedZone": "IL23336-P - Concordia Village",
+    "metric": "experience_score"
+  },
+  {
+    "id": "anomaly-005",
+    "timestamp": "2024-01-15T04:30:00Z",
+    "type": "interference",
+    "severity": "warning",
+    "description": "High RxDesense detected: 10.2%",
+    "affectedZone": "TN21944-P - Opus East Memphis",
+    "metric": "rx_desense"
+  }
+]
+
+

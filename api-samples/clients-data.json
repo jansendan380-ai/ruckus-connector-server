@@ -1,0 +1,124 @@
+[
+  {
+    "hostname": "iPhone1",
+    "modelName": "Unknown",
+    "ipAddress": "10.165.16.164 /::",
+    "macAddress": "00:01:3E:60:2D:2C",
+    "wlan": "LSS VOICE",
+    "apName": "Commons_AP",
+    "apMac": "2C:AB:46:08:B4:10",
+    "dataUsage": 1300.5,
+    "os": "iOS",
+    "deviceType": "phone"
+  },
+  {
+    "hostname": "9E:1F:DC:02:21:87",
+    "modelName": "Unknown",
+    "ipAddress": "10.165.16.167 /::",
+    "macAddress": "9E:1F:DC:02:21:87",
+    "wlan": "LSS DATA",
+    "apName": "Eastwood_u486",
+    "apMac": "34:15:93:1B:78:42",
+    "dataUsage": 557.8,
+    "os": "Unknown",
+    "deviceType": "other"
+  },
+  {
+    "hostname": "Samsung1",
+    "modelName": "Unknown",
+    "ipAddress": "10.162.16.163 /::",
+    "macAddress": "66:7B:B2:B8:BA:3E",
+    "wlan": "LSS VOICE",
+    "apName": "u-C4",
+    "apMac": "34:15:93:1B:5E:8A",
+    "dataUsage": 549.6,
+    "os": "Android",
+    "deviceType": "phone"
+  },
+  {
+    "hostname": "iPhone2",
+    "modelName": "Unknown",
+    "ipAddress": "10.160.16.186 /::",
+    "macAddress": "AA:BB:CC:DD:EE:11",
+    "wlan": "LSS DATA",
+    "apName": "AL_Room 22",
+    "apMac": "B0:7C:51:36:0F:92",
+    "dataUsage": 483.6,
+    "os": "iOS",
+    "deviceType": "phone"
+  },
+  {
+    "hostname": "DESKTOP-3D0M2VP",
+    "modelName": "Unknown",
+    "ipAddress": "10.162.16.166 /::",
+    "macAddress": "11:22:33:44:55:66",
+    "wlan": "LSS DATA",
+    "apName": "AP144",
+    "apMac": "2C:AB:46:08:9E:11",
+    "dataUsage": 440.2,
+    "os": "Windows",
+    "deviceType": "laptop"
+  },
+  {
+    "hostname": "Harry-s-S25-Ultra",
+    "modelName": "Unknown",
+    "ipAddress": "10.165.16.170 /::",
+    "macAddress": "22:33:44:55:66:77",
+    "wlan": "LSS VOICE",
+    "apName": "Main_Hall",
+    "apMac": "6A:3D:1C:2F:4E:8D",
+    "dataUsage": 392.5,
+    "os": "Android",
+    "deviceType": "phone"
+  },
+  {
+    "hostname": "Samsung2",
+    "modelName": "Unknown",
+    "ipAddress": "10.162.16.175 /::",
+    "macAddress": "33:44:55:66:77:88",
+    "wlan": "LSS DATA",
+    "apName": "Wing_B",
+    "apMac": "9F:E2:4D:1A:3C:7B",
+    "dataUsage": 370.7,
+    "os": "Android",
+    "deviceType": "phone"
+  },
+  {
+    "hostname": "66:7B:B2:B8:BA:3E",
+    "modelName": "Unknown",
+    "ipAddress": "10.160.16.180 /::",
+    "macAddress": "66:7B:B2:B8:BA:3E",
+    "wlan": "LSS GUEST",
+    "apName": "Floor_2_North",
+    "apMac": "5C:8A:4E:1F:3D:9A",
+    "dataUsage": 368.7,
+    "os": "Unknown",
+    "deviceType": "other"
+  },
+  {
+    "hostname": "iPhone3",
+    "modelName": "Unknown",
+    "ipAddress": "10.165.16.185 /::",
+    "macAddress": "44:55:66:77:88:99",
+    "wlan": "LSS VOICE",
+    "apName": "Commons_AP",
+    "apMac": "2C:AB:46:08:B4:10",
+    "dataUsage": 347.1,
+    "os": "iOS",
+    "deviceType": "phone"
+  },
+  {
+    "hostname": "AZULFD2",
+    "modelName": "Unknown",
+    "ipAddress": "10.162.16.190 /::",
+    "macAddress": "55:66:77:88:99:AA",
+    "wlan": "LSS DATA",
+    "apName": "AP144",
+    "apMac": "2C:AB:46:08:9E:11",
+    "dataUsage": 254.1,
+    "os": "Unknown",
+    "deviceType": "other"
+  }
+]
+
+

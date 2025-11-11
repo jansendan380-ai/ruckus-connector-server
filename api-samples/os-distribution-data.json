@@ -1,0 +1,34 @@
+[
+  {
+    "os": "iOS",
+    "percentage": 26.48,
+    "color": "#8B5CF6"
+  },
+  {
+    "os": "Android",
+    "percentage": 18.35,
+    "color": "#3B82F6"
+  },
+  {
+    "os": "Unknown",
+    "percentage": 27.13,
+    "color": "#1E3A5F"
+  },
+  {
+    "os": "Chrome OS/Chromebook",
+    "percentage": 7.2,
+    "color": "#10B981"
+  },
+  {
+    "os": "macOS",
+    "percentage": 5.57,
+    "color": "#D1D5DB"
+  },
+  {
+    "os": "Windows",
+    "percentage": 3.44,
+    "color": "#6B7280"
+  }
+]
+
+

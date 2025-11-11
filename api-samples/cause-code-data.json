@@ -1,0 +1,52 @@
+[
+  {
+    "code": 25,
+    "description": "Disassociated due to insufficient QoS",
+    "count": 298,
+    "impactScore": 94.6
+  },
+  {
+    "code": 45,
+    "description": "Peer unreachable",
+    "count": 83,
+    "impactScore": 28.3
+  },
+  {
+    "code": 47,
+    "description": "Requested from peer",
+    "count": 68,
+    "impactScore": 23.2
+  },
+  {
+    "code": 5,
+    "description": "Disassociated - AP unable to handle all STAs",
+    "count": 63,
+    "impactScore": 21.5
+  },
+  {
+    "code": 8,
+    "description": "Disassociated - STA has left BSS",
+    "count": 52,
+    "impactScore": 17.8
+  },
+  {
+    "code": 3,
+    "description": "Deauthenticated - leaving or left BSS",
+    "count": 51,
+    "impactScore": 17.4
+  },
+  {
+    "code": 1,
+    "description": "Unspecified reason",
+    "count": 42,
+    "impactScore": 14.3
+  },
+  {
+    "code": 4,
+    "description": "Disassociated due to inactivity",
+    "count": 38,
+    "impactScore": 13.0
+  }
+]
+
+

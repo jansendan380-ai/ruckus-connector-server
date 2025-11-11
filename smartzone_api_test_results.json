@@ -1,0 +1,3036 @@
+{
+  "test_info": {
+    "controller_url": "https://3.12.57.221:8443",
+    "username": "apireadonly",
+    "timestamp": "2025-10-03 05:07:17",
+    "total_endpoints_tested": 49,
+    "api_version": "v9_1"
+  },
+  "endpoint_results": {
+    "/controller": {
+      "endpoint": "/controller",
+      "method": "GET",
+      "category": "System",
+      "description": "Retrieve system summary",
+      "status_code": 200,
+      "response_time_ms": 74.57,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/controller",
+      "success": true,
+      "data": {
+        "totalCount": 2,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "id": "d8814de9-1265-4e21-abbf-86e4e468bfc0",
+            "model": "vSZ-H",
+            "description": "sz02-east",
+            "hostName": "ip-10-208-2-51",
+            "mac": "02:51:E9:9A:F5:5A",
+            "serialNumber": "98PXV3SGCXV9KCAH78X9VCMVBTJV",
+            "clusterRole": "Follower",
+            "controlNatIp": "3.21.123.74",
+            "uptimeInSec": 8405128,
+            "name": "ip-10-208-2-51-C",
+            "version": "6.1.2.0.487",
+            "apVersion": "6.1.2.0.2104",
+            "reservedPorts": [
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "21",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "LWAPP2SCG"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "22",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "SSHD"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "91",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Transfer AP data to SZ"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "443",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "AP/Switch Discovery and AP/Switch firmware download"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "987",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Switch Join"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "2084",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RadSec: RADIUS over TLS"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "4443",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "JITC CAC login support"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "5671 - 5672",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RabbitMQ"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "6379 - 6380",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Internal communication among SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7000",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Database (Cassandra) Clustering"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7443",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Public API deprecated access port. (Will be removed in the future version)"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7800 - 7805",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RPC and failure detection between SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7810 - 7812",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RPC and failure detection between SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8022",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "SSH for Management ACL"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8090",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8099 - 8100",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8200",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8222",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8280",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8443",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Web UI and Public API"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9080",
+                "bindingInterface": "CONTROL_MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN with External Subscriber Portal"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9191",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Internal communication among SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9300 - 9311",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Database (ElasticSearch) Clustering"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9443",
+                "bindingInterface": "CONTROL_MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN with External Subscriber Portal"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9997 - 9998",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN with Internal Subscriber Portal"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "10443",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "HTTPS (Cluster)"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "11211",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Internal communication among SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "67 - 68",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "DHCP Client"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "69",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "ZD AP Migration"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "123",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "NTP Sync between SZ Nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "161",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "SNMP"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "169",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "TFTP Client"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "546 - 547",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "DHCPv6 Client"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "3799",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "RADIUS Dynamic Authorization"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "5353",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "mDns service"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7500",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "SZ Cluster Operating"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "12223",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "LWAPP2SCG"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "33434 - 33534",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "AP Health Check (traceroute)"
+              }
+            ],
+            "controlIp": "10.208.2.51",
+            "clusterIp": "10.208.2.51",
+            "managementIp": "10.208.2.51",
+            "controlIpv6": null,
+            "clusterIpv6": null,
+            "managementIpv6": null
+          },
+          {
+            "id": "362c16b6-e01c-4a6d-a2b4-5550a478bb6c",
+            "model": "vSZ-H",
+            "description": "sz01-east",
+            "hostName": "ip-10-208-1-51",
+            "mac": "0A:D5:DE:1E:13:90",
+            "serialNumber": "98BJV17GT7NCN9ABN7J01X5ANH5V",
+            "clusterRole": "Leader",
+            "controlNatIp": "3.12.57.221",
+            "uptimeInSec": 8405966,
+            "name": "ip-10-208-1-51-C",
+            "version": "6.1.2.0.487",
+            "apVersion": "6.1.2.0.2104",
+            "reservedPorts": [
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "21",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "LWAPP2SCG"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "22",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "SSHD"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "91",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Transfer AP data to SZ"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "443",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "AP/Switch Discovery and AP/Switch firmware download"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "987",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Switch Join"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "2084",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RadSec: RADIUS over TLS"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "4443",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "JITC CAC login support"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "5671 - 5672",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RabbitMQ"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "6379 - 6380",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Internal communication among SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7000",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Database (Cassandra) Clustering"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7443",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Public API deprecated access port. (Will be removed in the future version)"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7800 - 7805",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RPC and failure detection between SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7810 - 7812",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "RPC and failure detection between SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8022",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "SSH for Management ACL"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8090",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8099 - 8100",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8200",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8222",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8280",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN in 3rd-Party / 3.6.2 Legacy AP Zone"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "8443",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Web UI and Public API"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9080",
+                "bindingInterface": "CONTROL_MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN with External Subscriber Portal"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9191",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Internal communication among SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9300 - 9311",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Database (ElasticSearch) Clustering"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9443",
+                "bindingInterface": "CONTROL_MANAGEMENT",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN with External Subscriber Portal"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "9997 - 9998",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "WISPr WLAN with Internal Subscriber Portal"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "10443",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "HTTPS (Cluster)"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "11211",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "TCP",
+                "from": "System",
+                "description": "Internal communication among SZ nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "67 - 68",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "DHCP Client"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "69",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "ZD AP Migration"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "123",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "NTP Sync between SZ Nodes"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "161",
+                "bindingInterface": "MANAGEMENT",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "SNMP"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "169",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "TFTP Client"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "546 - 547",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "DHCPv6 Client"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "3799",
+                "bindingInterface": "ALL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "RADIUS Dynamic Authorization"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "5353",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "mDns service"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "7500",
+                "bindingInterface": "CLUSTER",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "SZ Cluster Operating"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "12223",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "LWAPP2SCG"
+              },
+              {
+                "trafficDirection": "INBOUND",
+                "portRange": "33434 - 33534",
+                "bindingInterface": "CONTROL",
+                "destination": "*",
+                "protocol": "UDP",
+                "from": "System",
+                "description": "AP Health Check (traceroute)"
+              }
+            ],
+            "controlIp": "10.208.1.51",
+            "clusterIp": "10.208.1.51",
+            "managementIp": "10.208.1.51",
+            "controlIpv6": null,
+            "clusterIpv6": null,
+            "managementIpv6": null
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 2,
+      "sample_item_keys": [
+        "id",
+        "model",
+        "description",
+        "hostName",
+        "mac",
+        "serialNumber",
+        "clusterRole",
+        "controlNatIp",
+        "uptimeInSec",
+        "name",
+        "version",
+        "apVersion",
+        "reservedPorts",
+        "controlIp",
+        "clusterIp",
+        "managementIp",
+        "controlIpv6",
+        "clusterIpv6",
+        "managementIpv6"
+      ],
+      "total_count": 2,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/system": {
+      "endpoint": "/system",
+      "method": "GET",
+      "category": "System",
+      "description": "Get system settings (AP number limit)",
+      "status_code": 200,
+      "response_time_ms": 14.64,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/system",
+      "success": true,
+      "data": {
+        "apNumberLimitEnabled": null,
+        "apNumberLimitSettingsOfDomain": null,
+        "apNumberLimitSettingsOfZone": null,
+        "apMacOUIEnabled": null
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "apNumberLimitEnabled",
+        "apNumberLimitSettingsOfDomain",
+        "apNumberLimitSettingsOfZone",
+        "apMacOUIEnabled"
+      ]
+    },
+    "/system/inventory": {
+      "endpoint": "/system/inventory",
+      "method": "GET",
+      "category": "System",
+      "description": "Retrieve system inventory",
+      "status_code": 200,
+      "response_time_ms": 385.38,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/system/inventory",
+      "success": true,
+      "data": {
+        "totalCount": 22,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "zoneId": "1a1c37b6-a3ae-4c37-962e-aef5b39724fd",
+            "zoneName": "BC83386-P - Dogwood",
+            "meshSSID": null,
+            "totalAPs": 157,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 157,
+            "disconnectedAPs": 0,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 157,
+            "disconnectedMeshDisabledAPs": 0,
+            "clients": 634,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "84860f00-f9b2-4233-ba66-8a1524401217",
+            "zoneName": "IL62034-P - Meridian Village",
+            "meshSSID": null,
+            "totalAPs": 354,
+            "discoveryAPs": 0,
+            "provisionedAPs": 95,
+            "connectedAPs": 203,
+            "disconnectedAPs": 56,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 203,
+            "disconnectedMeshDisabledAPs": 56,
+            "clients": 0,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "32e85184-afcd-4260-be8e-59843e3b4c07",
+            "zoneName": "SBA Lab",
+            "meshSSID": null,
+            "totalAPs": 3,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 1,
+            "disconnectedAPs": 2,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 1,
+            "disconnectedMeshDisabledAPs": 2,
+            "clients": 0,
+            "apFirmwareVersion": "6.1.0.0.1595",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "259ed510-5624-49dd-b6aa-183d46e20341",
+            "zoneName": "FL21966-P - Town Hollywood",
+            "meshSSID": null,
+            "totalAPs": 428,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 425,
+            "disconnectedAPs": 3,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 425,
+            "disconnectedMeshDisabledAPs": 3,
+            "clients": 1965,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "c3229c1e-73ac-48e9-959c-383fb895098c",
+            "zoneName": "MO23626-P - Lenoir Woods",
+            "meshSSID": null,
+            "totalAPs": 343,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 333,
+            "disconnectedAPs": 10,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 333,
+            "disconnectedMeshDisabledAPs": 10,
+            "clients": 660,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "905398e5-943a-44a9-91e4-1793a4cceca2",
+            "zoneName": "CA28283 - Ventana Residences",
+            "meshSSID": null,
+            "totalAPs": 229,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 229,
+            "disconnectedAPs": 0,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 229,
+            "disconnectedMeshDisabledAPs": 0,
+            "clients": 512,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "3765b899-4742-4ab8-a5cd-9f91e63bd146",
+            "zoneName": "FL28245-P - ParkVillage I and II",
+            "meshSSID": null,
+            "totalAPs": 262,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 2,
+            "disconnectedAPs": 260,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 2,
+            "disconnectedMeshDisabledAPs": 260,
+            "clients": 2,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "8a2f13e7-8975-4bb5-859a-66fd10061487",
+            "zoneName": "FL29325-P - Harbor Cay",
+            "meshSSID": null,
+            "totalAPs": 280,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 0,
+            "disconnectedAPs": 280,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 0,
+            "disconnectedMeshDisabledAPs": 280,
+            "clients": 0,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "52489fd4-cd81-4c3c-9e64-b4faacce61f6",
+            "zoneName": "FL01313 - Palomar Core MEC",
+            "meshSSID": null,
+            "totalAPs": 1,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 1,
+            "disconnectedAPs": 0,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 1,
+            "disconnectedMeshDisabledAPs": 0,
+            "clients": 0,
+            "apFirmwareVersion": "6.1.0.0.1595",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "b4187899-38ae-4ace-8e40-0bc444455156",
+            "zoneName": "Staging Zone",
+            "meshSSID": null,
+            "totalAPs": 7,
+            "discoveryAPs": 3,
+            "provisionedAPs": 0,
+            "connectedAPs": 0,
+            "disconnectedAPs": 4,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 0,
+            "disconnectedMeshDisabledAPs": 4,
+            "clients": 0,
+            "apFirmwareVersion": null,
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "193d8d96-5960-416f-81e9-579068f3b01a",
+            "zoneName": "FL28243-P - Imperial Village",
+            "meshSSID": null,
+            "totalAPs": 148,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 130,
+            "disconnectedAPs": 18,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 130,
+            "disconnectedMeshDisabledAPs": 18,
+            "clients": 361,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "e742cd78-49bd-4946-b73f-e1a71712b665",
+            "zoneName": "MO63304-P - Breeze Park",
+            "meshSSID": null,
+            "totalAPs": 285,
+            "discoveryAPs": 0,
+            "provisionedAPs": 25,
+            "connectedAPs": 256,
+            "disconnectedAPs": 4,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 256,
+            "disconnectedMeshDisabledAPs": 4,
+            "clients": 389,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "6d17087a-9e11-4a53-911e-d1e8cdcb5abf",
+            "zoneName": "IL23336-P - Concordia Village",
+            "meshSSID": null,
+            "totalAPs": 391,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 388,
+            "disconnectedAPs": 3,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 388,
+            "disconnectedMeshDisabledAPs": 3,
+            "clients": 693,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "b42bc383-4628-4ec8-b042-01bad9c94dd8",
+            "zoneName": "FL28244-P - Sunpointe Place",
+            "meshSSID": null,
+            "totalAPs": 145,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 0,
+            "disconnectedAPs": 145,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 0,
+            "disconnectedMeshDisabledAPs": 145,
+            "clients": 0,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "6319eb5f-626a-4bcc-bc06-f492c9f76f80",
+            "zoneName": "IN28254-P - EMC2",
+            "meshSSID": "mesh-u46l1ngt",
+            "totalAPs": 8,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 8,
+            "disconnectedAPs": 0,
+            "connectedRootAPs": 8,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 0,
+            "disconnectedMeshDisabledAPs": 0,
+            "clients": 30,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": true
+          },
+          {
+            "zoneId": "9550b30d-905c-4638-94b4-87a2ceafa2aa",
+            "zoneName": "FL21908-P - Pier Sixty-Six",
+            "meshSSID": null,
+            "totalAPs": 861,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 795,
+            "disconnectedAPs": 66,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 795,
+            "disconnectedMeshDisabledAPs": 66,
+            "clients": 754,
+            "apFirmwareVersion": "6.1.2.0.2230",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "7d378d93-e796-46fc-a6f7-762856602794",
+            "zoneName": "NC29384-P - SAU",
+            "meshSSID": null,
+            "totalAPs": 960,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 0,
+            "disconnectedAPs": 960,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 0,
+            "disconnectedMeshDisabledAPs": 960,
+            "clients": 0,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "26b2e1fc-2b13-4267-bb92-1ebda3642c5e",
+            "zoneName": "FL28242-P - Serenity Lane",
+            "meshSSID": null,
+            "totalAPs": 187,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 1,
+            "disconnectedAPs": 186,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 1,
+            "disconnectedMeshDisabledAPs": 186,
+            "clients": 7,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "cfb621aa-341f-4e5c-bb04-f2d1c21e801e",
+            "zoneName": "GA29532-P - Signal House",
+            "meshSSID": null,
+            "totalAPs": 211,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 204,
+            "disconnectedAPs": 7,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 204,
+            "disconnectedMeshDisabledAPs": 7,
+            "clients": 973,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "97009815-4310-4121-bfb7-80389f95ebf9",
+            "zoneName": "TN21944-P - Opus East Memphis",
+            "meshSSID": null,
+            "totalAPs": 288,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 286,
+            "disconnectedAPs": 2,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 286,
+            "disconnectedMeshDisabledAPs": 2,
+            "clients": 710,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "8533f41b-f651-42f3-828a-d4898c82294c",
+            "zoneName": "IL23640-P - Lutheran Hillside",
+            "meshSSID": null,
+            "totalAPs": 383,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 379,
+            "disconnectedAPs": 4,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 379,
+            "disconnectedMeshDisabledAPs": 4,
+            "clients": 369,
+            "apFirmwareVersion": "6.1.0.0.1595",
+            "meshEnabled": false
+          },
+          {
+            "zoneId": "d8eb2035-d2f8-4b5f-962c-a4a132db88e3",
+            "zoneName": "TX29328-P - The Gabriel",
+            "meshSSID": null,
+            "totalAPs": 361,
+            "discoveryAPs": 0,
+            "provisionedAPs": 0,
+            "connectedAPs": 360,
+            "disconnectedAPs": 1,
+            "connectedRootAPs": 0,
+            "disconnectedRootAPs": 0,
+            "rebootingRootAPs": 0,
+            "connectedMeshAPs": 0,
+            "disconnectedMeshAPs": 0,
+            "rebootingMeshAPs": 0,
+            "connectedeMeshAPs": 0,
+            "disconnectedeMeshAPs": 0,
+            "rebootingeMeshAPs": 0,
+            "connectedDownMeshAPs": 0,
+            "disconnectedDownMeshAPs": 0,
+            "rebootingDownMeshAPs": 0,
+            "connectedMeshDisabledAPs": 360,
+            "disconnectedMeshDisabledAPs": 1,
+            "clients": 816,
+            "apFirmwareVersion": "6.1.2.0.2104",
+            "meshEnabled": false
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 22,
+      "sample_item_keys": [
+        "zoneId",
+        "zoneName",
+        "meshSSID",
+        "totalAPs",
+        "discoveryAPs",
+        "provisionedAPs",
+        "connectedAPs",
+        "disconnectedAPs",
+        "connectedRootAPs",
+        "disconnectedRootAPs",
+        "rebootingRootAPs",
+        "connectedMeshAPs",
+        "disconnectedMeshAPs",
+        "rebootingMeshAPs",
+        "connectedeMeshAPs",
+        "disconnectedeMeshAPs",
+        "rebootingeMeshAPs",
+        "connectedDownMeshAPs",
+        "disconnectedDownMeshAPs",
+        "rebootingDownMeshAPs",
+        "connectedMeshDisabledAPs",
+        "disconnectedMeshDisabledAPs",
+        "clients",
+        "apFirmwareVersion",
+        "meshEnabled"
+      ],
+      "total_count": 22,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/system/systemInfo": {
+      "endpoint": "/system/systemInfo",
+      "method": "GET",
+      "category": "System",
+      "description": "Get system information",
+      "status_code": 404,
+      "response_time_ms": 40.43,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/system/systemInfo",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/system/health": {
+      "endpoint": "/system/health",
+      "method": "GET",
+      "category": "System",
+      "description": "Get system health status",
+      "status_code": 404,
+      "response_time_ms": 36.22,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/system/health",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/system/summary": {
+      "endpoint": "/system/summary",
+      "method": "GET",
+      "category": "System",
+      "description": "Get system summary",
+      "status_code": 404,
+      "response_time_ms": 35.81,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/system/summary",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/domains": {
+      "endpoint": "/domains",
+      "method": "GET",
+      "category": "Domain Management",
+      "description": "Retrieve list of domains",
+      "status_code": 200,
+      "response_time_ms": 57.64,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/domains",
+      "success": true,
+      "data": {
+        "totalCount": 9,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "id": "060415dc-2149-4d18-a9ef-eef0259ab4b9",
+            "name": "Managed Sites",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "admin",
+            "createDatetime": "2023/02/02 14:34:28",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 3,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 2109,
+            "zeroTouchStatus": true
+          },
+          {
+            "id": "6544a5d6-e5bc-421a-bccc-95d77c93efb6",
+            "name": "LSS",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "admin",
+            "createDatetime": "2024/06/25 11:47:06",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 5,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 1636,
+            "zeroTouchStatus": true
+          },
+          {
+            "id": "cd1f1eaf-e63a-4d94-a02e-096027cd2bb7",
+            "name": "NineTwelve",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "user-9237194",
+            "createDatetime": "2022/01/25 15:57:51",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 1,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 8,
+            "zeroTouchStatus": false
+          },
+          {
+            "id": "c77758c1-1842-4b03-abca-f14f193420e3",
+            "name": "Related",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "admin",
+            "createDatetime": "2024/05/08 17:42:47",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 1,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 428,
+            "zeroTouchStatus": true
+          },
+          {
+            "id": "c9aa6c9f-78dd-4ab6-acd4-0fb20dd35e02",
+            "name": "Palomar Properties",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "admin",
+            "createDatetime": "2021/10/26 15:08:19",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 6,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 1023,
+            "zeroTouchStatus": false
+          },
+          {
+            "id": "71e5b0c7-649f-4624-a991-04664245d18e",
+            "name": "Marcon",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "admin",
+            "createDatetime": "2024/06/11 18:03:51",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 1,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 157,
+            "zeroTouchStatus": true
+          },
+          {
+            "id": "ea2dac36-bd89-4644-b9d3-b99acbd305c9",
+            "name": "Presidio Bay",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "tjones.elauwit",
+            "createDatetime": "2023/02/20 21:31:32",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 1,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 229,
+            "zeroTouchStatus": true
+          },
+          {
+            "id": "ad5c8076-1e6e-4b46-b391-981bcf058508",
+            "name": "Jamestown LP",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "admin",
+            "createDatetime": "2023/10/13 13:34:59",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 1,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 211,
+            "zeroTouchStatus": true
+          },
+          {
+            "id": "be8ba27e-45b3-400c-9183-306a7c29a3b2",
+            "name": "Western Securities",
+            "domainType": "PARTNER",
+            "description": "",
+            "createdBy": "admin",
+            "createDatetime": "2024/06/03 14:59:53",
+            "parentDomainId": "8b2081d5-9662-40d9-a3db-2a3cf4dde3f7",
+            "zoneCount": 1,
+            "subDomainCount": 0,
+            "administratorCount": 0,
+            "apCount": 361,
+            "zeroTouchStatus": true
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 9,
+      "sample_item_keys": [
+        "id",
+        "name",
+        "domainType",
+        "description",
+        "createdBy",
+        "createDatetime",
+        "parentDomainId",
+        "zoneCount",
+        "subDomainCount",
+        "administratorCount",
+        "apCount",
+        "zeroTouchStatus"
+      ],
+      "total_count": 9,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/rkszones": {
+      "endpoint": "/rkszones",
+      "method": "GET",
+      "category": "Zone Management",
+      "description": "Retrieve list of Ruckus Wireless AP zones",
+      "status_code": 403,
+      "response_time_ms": 13.02,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/rkszones",
+      "success": false,
+      "error": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}",
+      "error_type": "permission_denied"
+    },
+    "/aps": {
+      "endpoint": "/aps",
+      "method": "GET",
+      "category": "Access Point",
+      "description": "Retrieve list of APs in zone/domain",
+      "status_code": 403,
+      "response_time_ms": 6.35,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/aps",
+      "success": false,
+      "error": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}",
+      "error_type": "permission_denied"
+    },
+    "/aps/summary": {
+      "endpoint": "/aps/summary",
+      "method": "GET",
+      "category": "Access Point",
+      "description": "Get AP summary information",
+      "status_code": 403,
+      "response_time_ms": 26.35,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/aps/summary",
+      "success": false,
+      "error": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}",
+      "error_type": "permission_denied"
+    },
+    "/aps/operational": {
+      "endpoint": "/aps/operational",
+      "method": "GET",
+      "category": "Access Point",
+      "description": "Get AP operational status",
+      "status_code": 403,
+      "response_time_ms": 23.49,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/aps/operational",
+      "success": false,
+      "error": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}",
+      "error_type": "permission_denied"
+    },
+    "/aps/configuration": {
+      "endpoint": "/aps/configuration",
+      "method": "GET",
+      "category": "Access Point",
+      "description": "Get AP configuration",
+      "status_code": 403,
+      "response_time_ms": 25.59,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/aps/configuration",
+      "success": false,
+      "error": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}",
+      "error_type": "permission_denied"
+    },
+    "/aps/events": {
+      "endpoint": "/aps/events",
+      "method": "GET",
+      "category": "Access Point",
+      "description": "Get AP events",
+      "status_code": 403,
+      "response_time_ms": 23.56,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/aps/events",
+      "success": false,
+      "error": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}",
+      "error_type": "permission_denied"
+    },
+    "/aps/alarms": {
+      "endpoint": "/aps/alarms",
+      "method": "GET",
+      "category": "Access Point",
+      "description": "Get AP alarms",
+      "status_code": 403,
+      "response_time_ms": 26.44,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/aps/alarms",
+      "success": false,
+      "error": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}",
+      "error_type": "permission_denied"
+    },
+    "/sessions": {
+      "endpoint": "/sessions",
+      "method": "GET",
+      "category": "Client Management",
+      "description": "Retrieve client sessions",
+      "status_code": 404,
+      "response_time_ms": 36.88,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/sessions",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/sessions/summary": {
+      "endpoint": "/sessions/summary",
+      "method": "GET",
+      "category": "Client Management",
+      "description": "Get session summary",
+      "status_code": 404,
+      "response_time_ms": 39.35,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/sessions/summary",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/clients": {
+      "endpoint": "/clients",
+      "method": "GET",
+      "category": "Client Management",
+      "description": "Retrieve client information",
+      "status_code": 404,
+      "response_time_ms": 32.45,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/clients",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/clients/summary": {
+      "endpoint": "/clients/summary",
+      "method": "GET",
+      "category": "Client Management",
+      "description": "Get client summary",
+      "status_code": 404,
+      "response_time_ms": 35.25,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/clients/summary",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/wlans": {
+      "endpoint": "/wlans",
+      "method": "GET",
+      "category": "WLAN Management",
+      "description": "Retrieve WLAN configurations",
+      "status_code": 404,
+      "response_time_ms": 31.18,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/wlans",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/wlans/summary": {
+      "endpoint": "/wlans/summary",
+      "method": "GET",
+      "category": "WLAN Management",
+      "description": "Get WLAN summary",
+      "status_code": 404,
+      "response_time_ms": 34.08,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/wlans/summary",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/monitor/ap": {
+      "endpoint": "/monitor/ap",
+      "method": "GET",
+      "category": "Monitoring",
+      "description": "Monitor AP status",
+      "status_code": 405,
+      "response_time_ms": 34.38,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/monitor/ap",
+      "success": false,
+      "error": "{\"message\":\"Method not support handling exception (Request method 'GET' not supported)\",\"errorCode\":101,\"errorType\":\"Bad HTTP request\"}",
+      "error_type": "method_not_allowed"
+    },
+    "/monitor/client": {
+      "endpoint": "/monitor/client",
+      "method": "GET",
+      "category": "Monitoring",
+      "description": "Monitor client status",
+      "status_code": 405,
+      "response_time_ms": 34.74,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/monitor/client",
+      "success": false,
+      "error": "{\"message\":\"Method not support handling exception (Request method 'GET' not supported)\",\"errorCode\":101,\"errorType\":\"Bad HTTP request\"}",
+      "error_type": "method_not_allowed"
+    },
+    "/monitor/system": {
+      "endpoint": "/monitor/system",
+      "method": "GET",
+      "category": "Monitoring",
+      "description": "Monitor system status",
+      "status_code": 404,
+      "response_time_ms": 33.96,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/monitor/system",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/analytics/ap": {
+      "endpoint": "/analytics/ap",
+      "method": "GET",
+      "category": "Analytics",
+      "description": "AP analytics data",
+      "status_code": 404,
+      "response_time_ms": 35.49,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/analytics/ap",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/analytics/client": {
+      "endpoint": "/analytics/client",
+      "method": "GET",
+      "category": "Analytics",
+      "description": "Client analytics data",
+      "status_code": 404,
+      "response_time_ms": 35.25,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/analytics/client",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/analytics/system": {
+      "endpoint": "/analytics/system",
+      "method": "GET",
+      "category": "Analytics",
+      "description": "System analytics data",
+      "status_code": 404,
+      "response_time_ms": 34.95,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/analytics/system",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/events": {
+      "endpoint": "/events",
+      "method": "GET",
+      "category": "Events & Alarms",
+      "description": "Retrieve system events",
+      "status_code": 404,
+      "response_time_ms": 28.42,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/events",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/alarms": {
+      "endpoint": "/alarms",
+      "method": "GET",
+      "category": "Events & Alarms",
+      "description": "Retrieve system alarms",
+      "status_code": 404,
+      "response_time_ms": 28.3,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/alarms",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/alerts": {
+      "endpoint": "/alerts",
+      "method": "GET",
+      "category": "Events & Alarms",
+      "description": "Retrieve system alerts",
+      "status_code": 404,
+      "response_time_ms": 28.72,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/alerts",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/licenses": {
+      "endpoint": "/licenses",
+      "method": "GET",
+      "category": "License Management",
+      "description": "Retrieve license information",
+      "status_code": 200,
+      "response_time_ms": 12.68,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/licenses",
+      "success": true,
+      "data": {
+        "totalCount": 31,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 9,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 369,
+            "createTime": "2024/02/22",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 158,
+            "createTime": "2024/06/17",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 849,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 5,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 286,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 24,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 153,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 1205,
+            "createTime": "2022/02/16",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 251,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Default AP Capacity License for vSZ",
+            "name": "CAPACITY-AP-DEFAULT",
+            "count": 1,
+            "createTime": "1970/01/01",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 402,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Default Switch Capacity License for vSZ",
+            "name": "CAPACITY-SWITCH-DEFAULT",
+            "count": 1,
+            "createTime": "1970/01/01",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "WatchDog Support VSCG HA Renew, 3 Yr",
+            "name": "SUPPORT-EU",
+            "count": 1,
+            "createTime": "2024/12/08",
+            "expireDate": "2027/12/08"
+          },
+          {
+            "description": "Virtual SmartCell Gateway, 1 Instance",
+            "name": "INSTANCE-VSCG",
+            "count": 1,
+            "createTime": "2021/11/02",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Virtual SmartCell Gateway, 1 Instance",
+            "name": "INSTANCE-VSCG",
+            "count": 1,
+            "createTime": "2021/11/02",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 303,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Default Switch Capacity License for vSZ",
+            "name": "CAPACITY-SWITCH-DEFAULT",
+            "count": 1,
+            "createTime": "1970/01/01",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 286,
+            "createTime": "2023/09/06",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Virtual Data Plane. 10 Gbps capacity",
+            "name": "FEATURE-VSZD-BW",
+            "count": 1,
+            "createTime": "2022/02/16",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 19,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Default AP Capacity License for vSZ",
+            "name": "CAPACITY-AP-DEFAULT",
+            "count": 1,
+            "createTime": "1970/01/01",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Virtual Data Plane. 1 Gbps capacity",
+            "name": "CAPACITY-VSZD",
+            "count": 1,
+            "createTime": "2022/02/16",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 498,
+            "createTime": "2023/07/17",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 570,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 208,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "Virtual SmartCell Gateway, 1 Instance",
+            "name": "INSTANCE-VSCG",
+            "count": 1,
+            "createTime": "2022/02/16",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "EU Sprt Renew - VSCG-RTU, 3 YR",
+            "name": "SUPPORT-EU",
+            "count": 1,
+            "createTime": "2024/12/08",
+            "expireDate": "2027/12/08"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 498,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 160,
+            "createTime": "2024/06/03",
+            "expireDate": "292278994/08/17"
+          },
+          {
+            "description": "SZ/(v)SCG AP license for 1 AP",
+            "name": "CAPACITY-AP",
+            "count": 402,
+            "createTime": "2024/05/09",
+            "expireDate": "292278994/08/17"
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 31,
+      "sample_item_keys": [
+        "description",
+        "name",
+        "count",
+        "createTime",
+        "expireDate"
+      ],
+      "total_count": 31,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/licensesSummary": {
+      "endpoint": "/licensesSummary",
+      "method": "GET",
+      "category": "License Management",
+      "description": "Get license summary",
+      "status_code": 200,
+      "response_time_ms": 38.88,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/licensesSummary",
+      "success": true,
+      "data": {
+        "totalCount": 8,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "licenseTypeDescription": "Data Plane DHCP Feature Capacity License",
+            "capacityControlLicenseCount": {
+              "usedCount": 0,
+              "totalCount": 0
+            }
+          },
+          {
+            "licenseTypeDescription": "Switch Capacity License",
+            "capacityControlLicenseCount": {
+              "usedCount": 0,
+              "totalCount": 2
+            }
+          },
+          {
+            "licenseTypeDescription": "Feature License for URL Filtering",
+            "capacityControlLicenseCount": {
+              "usedCount": 0,
+              "totalCount": 0
+            }
+          },
+          {
+            "licenseTypeDescription": "AP Capacity License",
+            "capacityControlLicenseCount": {
+              "usedCount": 6285,
+              "totalCount": 6657
+            }
+          },
+          {
+            "licenseTypeDescription": "vSZ-D Capacity License",
+            "capacityControlLicenseCount": {
+              "usedCount": 0,
+              "totalCount": 1
+            }
+          },
+          {
+            "licenseTypeDescription": "AP Split Tunnel Capacity License",
+            "capacityControlLicenseCount": {
+              "usedCount": 0,
+              "totalCount": 0
+            }
+          },
+          {
+            "licenseTypeDescription": "AP Direct Tunnel License",
+            "capacityControlLicenseCount": {
+              "usedCount": 0,
+              "totalCount": 0
+            }
+          },
+          {
+            "licenseTypeDescription": "Data Plane NAT Feature Capacity License",
+            "capacityControlLicenseCount": {
+              "usedCount": 0,
+              "totalCount": 0
+            }
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 8,
+      "sample_item_keys": [
+        "licenseTypeDescription",
+        "capacityControlLicenseCount"
+      ],
+      "total_count": 8,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/licensesSyncLogs": {
+      "endpoint": "/licensesSyncLogs",
+      "method": "GET",
+      "category": "License Management",
+      "description": "Get license sync logs",
+      "status_code": 200,
+      "response_time_ms": 13.64,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/licensesSyncLogs",
+      "success": true,
+      "data": {
+        "totalCount": 30,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/10/03 00:40:05"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/10/02 00:32:45"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/10/01 00:28:34"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/30 00:43:13"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/29 00:38:41"
+          },
+          {
+            "syncResult": "FAILURE",
+            "createDateTime": "2025/09/28 00:28:15"
+          },
+          {
+            "syncResult": "FAILURE",
+            "createDateTime": "2025/09/27 00:26:04"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/26 00:10:25"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/25 00:19:49"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/24 00:35:28"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/23 00:09:19"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/22 00:44:14"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/21 00:46:57"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/20 00:21:53"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/19 00:21:26"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/18 00:07:10"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/17 00:08:40"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/16 00:23:05"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/15 00:19:03"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/14 00:04:39"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/13 00:22:25"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/12 00:47:36"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/11 00:04:26"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/10 00:19:19"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/09 00:27:33"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/08 00:46:17"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/07 00:53:23"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/06 00:33:10"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/05 00:20:47"
+          },
+          {
+            "syncResult": "SUCCESS",
+            "createDateTime": "2025/09/04 00:05:32"
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 30,
+      "sample_item_keys": [
+        "syncResult",
+        "createDateTime"
+      ],
+      "total_count": 30,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/adminaaa": {
+      "endpoint": "/adminaaa",
+      "method": "GET",
+      "category": "Administration",
+      "description": "Get admin AAA settings",
+      "status_code": 400,
+      "response_time_ms": 7.45,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/adminaaa",
+      "success": false,
+      "error": "{\"message\":\"Missing request parameter (Required String parameter 'type' is not present)\",\"errorCode\":101,\"errorType\":\"Bad HTTP request\"}",
+      "error_type": "bad_request"
+    },
+    "/configuration": {
+      "endpoint": "/configuration",
+      "method": "GET",
+      "category": "Administration",
+      "description": "Get configuration settings",
+      "status_code": 200,
+      "response_time_ms": 20.91,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/configuration",
+      "success": true,
+      "data": {
+        "totalCount": 9,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "id": "e16bc1f4-3cd0-4912-930a-182983fcbc1e",
+            "createdOn": "2025/09/21 03:00:00",
+            "scgVersion": "6.1.2.0.487",
+            "controlPlaneSoftwareVersion": "6.1.2.0.253",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "",
+            "type": "Scheduled Backup",
+            "backupElapsed": 64,
+            "fileSize": 29964601,
+            "md5": "b4b28bd5d1a3001b6d63fb7c2c42e381"
+          },
+          {
+            "id": "6d98a4c6-604e-4a83-8d2f-8d47742716e4",
+            "createdOn": "2025/09/14 03:00:00",
+            "scgVersion": "6.1.2.0.487",
+            "controlPlaneSoftwareVersion": "6.1.2.0.253",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "",
+            "type": "Scheduled Backup",
+            "backupElapsed": 63,
+            "fileSize": 29960104,
+            "md5": "67c1526b16b83ee9242bcc10b43f381e"
+          },
+          {
+            "id": "c5db6509-f47f-44e2-a76e-550a736cc698",
+            "createdOn": "2025/09/07 03:00:00",
+            "scgVersion": "6.1.2.0.487",
+            "controlPlaneSoftwareVersion": "6.1.2.0.253",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "",
+            "type": "Scheduled Backup",
+            "backupElapsed": 62,
+            "fileSize": 29949466,
+            "md5": "463d222ce10c78fa17fc7bbd0b20a859"
+          },
+          {
+            "id": "9a2705e4-2ede-47f0-8edd-6970204a8ea0",
+            "createdOn": "2024/04/30 03:26:24",
+            "scgVersion": "6.1.0.0.935",
+            "controlPlaneSoftwareVersion": "6.1.0.0.683",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "admin",
+            "type": "Manual Backup",
+            "backupElapsed": 53,
+            "fileSize": 20704400,
+            "md5": "193d29d9e848b66a105b5e0e4c8f14b8"
+          },
+          {
+            "id": "c407414a-df88-42b4-bc12-c706c4c0876d",
+            "createdOn": "2025/08/31 03:00:00",
+            "scgVersion": "6.1.2.0.487",
+            "controlPlaneSoftwareVersion": "6.1.2.0.253",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "",
+            "type": "Scheduled Backup",
+            "backupElapsed": 65,
+            "fileSize": 29943406,
+            "md5": "79c9f2440785a5c2f29c1a3ee8797457"
+          },
+          {
+            "id": "ef07a308-20c2-40d9-81e0-9ea26a4f8f1f",
+            "createdOn": "2025/09/28 03:00:00",
+            "scgVersion": "6.1.2.0.487",
+            "controlPlaneSoftwareVersion": "6.1.2.0.253",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "",
+            "type": "Scheduled Backup",
+            "backupElapsed": 64,
+            "fileSize": 29969295,
+            "md5": "49794d3e97f64d245dfd493cb065fca4"
+          },
+          {
+            "id": "ab328115-7206-49b8-a079-c095017718ac",
+            "createdOn": "2022/12/20 13:29:58",
+            "scgVersion": "6.1.0.0.935",
+            "controlPlaneSoftwareVersion": "6.1.0.0.683",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "admin",
+            "type": "Manual Backup",
+            "backupElapsed": 55,
+            "fileSize": 19706705,
+            "md5": "0725ff450da992806c3b527421b336bd"
+          },
+          {
+            "id": "7fc9e9fa-630f-4ae0-99a8-79a2a02aebbc",
+            "createdOn": "2025/04/02 04:51:08",
+            "scgVersion": "6.1.0.0.935",
+            "controlPlaneSoftwareVersion": "6.1.0.0.683",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "admin",
+            "type": "Manual Backup",
+            "backupElapsed": 52,
+            "fileSize": 22775421,
+            "md5": "c47faace3359f5923c77679ea58c8652"
+          },
+          {
+            "id": "279e3682-a609-4421-baf5-5cd43a22ffd8",
+            "createdOn": "2024/07/23 04:10:26",
+            "scgVersion": "6.1.0.0.935",
+            "controlPlaneSoftwareVersion": "6.1.0.0.683",
+            "dataPlaneSoftwareVersion": "0.0.0.0",
+            "createdBy": "admin",
+            "type": "Manual Backup",
+            "backupElapsed": 53,
+            "fileSize": 21571954,
+            "md5": "ebcec6db60f2c2126b0e37d755ccd0c9"
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 9,
+      "sample_item_keys": [
+        "id",
+        "createdOn",
+        "scgVersion",
+        "controlPlaneSoftwareVersion",
+        "dataPlaneSoftwareVersion",
+        "createdBy",
+        "type",
+        "backupElapsed",
+        "fileSize",
+        "md5"
+      ],
+      "total_count": 9,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/cluster": {
+      "endpoint": "/cluster",
+      "method": "GET",
+      "category": "Administration",
+      "description": "Get cluster information",
+      "status_code": 200,
+      "response_time_ms": 231.33,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/cluster",
+      "success": true,
+      "data": {
+        "totalCount": 9,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "id": "20250627223237_6.1.2.0.487",
+            "version": "6.1.2.0.487",
+            "filesize": "3.2 GB",
+            "createdOn": "2025/06/27 22:32:37"
+          },
+          {
+            "id": "20250416044440_6.1.0.0.935",
+            "version": "6.1.0.0.935",
+            "filesize": "2.9 GB",
+            "createdOn": "2025/04/16 04:44:40"
+          },
+          {
+            "id": "20250401185827_6.1.0.0.935",
+            "version": "6.1.0.0.935",
+            "filesize": "2.9 GB",
+            "createdOn": "2025/04/01 18:58:27"
+          },
+          {
+            "id": "20240723041354_6.1.0.0.935",
+            "version": "6.1.0.0.935",
+            "filesize": "2.8 GB",
+            "createdOn": "2024/07/23 04:13:54"
+          },
+          {
+            "id": "20240430031513_6.1.0.0.935",
+            "version": "6.1.0.0.935",
+            "filesize": "2.7 GB",
+            "createdOn": "2024/04/30 03:15:13"
+          },
+          {
+            "id": "20240116183100_6.1.0.0.935",
+            "version": "6.1.0.0.935",
+            "filesize": "2.3 GB",
+            "createdOn": "2024/01/16 18:31:00"
+          },
+          {
+            "id": "20230929150954_6.1.0.0.935",
+            "version": "6.1.0.0.935",
+            "filesize": "2.2 GB",
+            "createdOn": "2023/09/29 15:09:54"
+          },
+          {
+            "id": "20221220132248_6.1.0.0.935",
+            "version": "6.1.0.0.935",
+            "filesize": "2.1 GB",
+            "createdOn": "2022/12/20 13:22:48"
+          },
+          {
+            "id": "20220223074142_6.0.0.0.1331",
+            "version": "6.0.0.0.1331",
+            "filesize": "1.9 GB",
+            "createdOn": "2022/02/23 07:41:42"
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 9,
+      "sample_item_keys": [
+        "id",
+        "version",
+        "filesize",
+        "createdOn"
+      ],
+      "total_count": 9,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/configuration/backup": {
+      "endpoint": "/configuration/backup",
+      "method": "GET",
+      "category": "Backup & Restore",
+      "description": "Get backup configurations",
+      "status_code": 405,
+      "response_time_ms": 38.56,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/configuration/backup",
+      "success": false,
+      "error": "{\"message\":\"Method not support handling exception (Request method 'GET' not supported)\",\"errorCode\":101,\"errorType\":\"Bad HTTP request\"}",
+      "error_type": "method_not_allowed"
+    },
+    "/cluster/backup": {
+      "endpoint": "/cluster/backup",
+      "method": "GET",
+      "category": "Backup & Restore",
+      "description": "Get cluster backup info",
+      "status_code": 405,
+      "response_time_ms": 61.13,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/cluster/backup",
+      "success": false,
+      "error": "{\"message\":\"Method not support handling exception (Request method 'GET' not supported)\",\"errorCode\":101,\"errorType\":\"Bad HTTP request\"}",
+      "error_type": "method_not_allowed"
+    },
+    "/upgrade/status": {
+      "endpoint": "/upgrade/status",
+      "method": "GET",
+      "category": "Upgrade Management",
+      "description": "Get upgrade status",
+      "status_code": 200,
+      "response_time_ms": 7.94,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/upgrade/status",
+      "success": true,
+      "data": {
+        "clusterOperationProgress": {
+          "operation": "None",
+          "overallProgress": 0,
+          "isSelfBladeRebooting": null,
+          "bladeProgresss": [
+            {
+              "bladeUUID": "362c16b6-e01c-4a6d-a2b4-5550a478bb6c",
+              "hostName": "ip-10-208-1-51",
+              "iterationName": "None",
+              "state": "",
+              "progress": 0
+            },
+            {
+              "bladeUUID": "d8814de9-1265-4e21-abbf-86e4e468bfc0",
+              "hostName": "ip-10-208-2-51",
+              "iterationName": "None",
+              "state": "",
+              "progress": 0
+            }
+          ],
+          "previousOperationRecord": {
+            "operation": "ConfigurationBackup",
+            "success": true,
+            "errorMsg": null
+          },
+          "clusterSubTaskState": null,
+          "clusterOperationBlockUI": false,
+          "clusterOperationDisplayMsg": ""
+        }
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "clusterOperationProgress"
+      ]
+    },
+    "/upgrade/history": {
+      "endpoint": "/upgrade/history",
+      "method": "GET",
+      "category": "Upgrade Management",
+      "description": "Get upgrade history",
+      "status_code": 200,
+      "response_time_ms": 7.5,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/upgrade/history",
+      "success": true,
+      "data": {
+        "totalCount": 3,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "startTime": "2025/04/16 04:48:51",
+            "version": "6.1.2.0.487",
+            "cbVersion": "6.1.2.0.253",
+            "dpVersion": "",
+            "apFwVersion": "6.1.2.0.2104",
+            "oldVersion": "6.1.0.0.935",
+            "oldCbVersion": "6.1.0.0.683",
+            "oldDpVersion": "0.0.0.0",
+            "oldApFwVersion": "6.1.0.0.1595",
+            "fileName": "vscg-6.1.2.0.487.ximg",
+            "elapsedSeconds": 2440
+          },
+          {
+            "startTime": "2022/02/23 07:45:21",
+            "version": "6.1.0.0.935",
+            "cbVersion": "6.1.0.0.683",
+            "dpVersion": "",
+            "apFwVersion": "6.1.0.0.1595",
+            "oldVersion": "6.0.0.0.1331",
+            "oldCbVersion": "6.0.0.0.1213",
+            "oldDpVersion": "0.0.0.0",
+            "oldApFwVersion": "6.0.0.0.1594",
+            "fileName": "vscg-6.1.0.0.935.ximg",
+            "elapsedSeconds": 1988
+          },
+          {
+            "startTime": "2021/09/27 11:26:24",
+            "version": "6.0.0.0.1331",
+            "cbVersion": "6.0.0.0.1213",
+            "dpVersion": "0.0.0.0",
+            "apFwVersion": "6.0.0.0.1594",
+            "oldVersion": "6.0.0.0.1331",
+            "oldCbVersion": "6.0.0.0.1213",
+            "oldDpVersion": "0.0.0.0",
+            "oldApFwVersion": "6.0.0.0.1594",
+            "fileName": "Fresh Installation",
+            "elapsedSeconds": 735
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 3,
+      "sample_item_keys": [
+        "startTime",
+        "version",
+        "cbVersion",
+        "dpVersion",
+        "apFwVersion",
+        "oldVersion",
+        "oldCbVersion",
+        "oldDpVersion",
+        "oldApFwVersion",
+        "fileName",
+        "elapsedSeconds"
+      ],
+      "total_count": 3,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/upgrade/patch": {
+      "endpoint": "/upgrade/patch",
+      "method": "GET",
+      "category": "Upgrade Management",
+      "description": "Get patch information",
+      "status_code": 422,
+      "response_time_ms": 38.71,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/upgrade/patch",
+      "success": false,
+      "error": "{\"message\":\"get upgrade patch info Exception\",\"errorCode\":302,\"errorType\":\"Business rule violation\"}",
+      "error_type": "http_422"
+    },
+    "/apPatch": {
+      "endpoint": "/apPatch",
+      "method": "GET",
+      "category": "AP Patch Management",
+      "description": "Get AP patch information",
+      "status_code": 500,
+      "response_time_ms": 11.92,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/apPatch",
+      "success": false,
+      "error": "{\"message\":\"Fail to get ap upload patch info\",\"errorCode\":0,\"errorType\":\"Internal server error\"}",
+      "error_type": "internal_server_error"
+    },
+    "/apPatch/status": {
+      "endpoint": "/apPatch/status",
+      "method": "GET",
+      "category": "AP Patch Management",
+      "description": "Get AP patch status",
+      "status_code": 200,
+      "response_time_ms": 5.38,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/apPatch/status",
+      "success": true,
+      "data": {
+        "clusterOperationProgress": {
+          "operation": "None",
+          "overallProgress": 0,
+          "previousOperationRecord": {
+            "operation": "ConfigurationBackup",
+            "success": true,
+            "errorMsg": null
+          }
+        }
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "clusterOperationProgress"
+      ]
+    },
+    "/apPatch/history": {
+      "endpoint": "/apPatch/history",
+      "method": "GET",
+      "category": "AP Patch Management",
+      "description": "Get AP patch history",
+      "status_code": 200,
+      "response_time_ms": 7.63,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/apPatch/history",
+      "success": true,
+      "data": {
+        "totalCount": 1,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": [
+          {
+            "startDateTime": "2025/08/27 14:26:05",
+            "fileName": "ap-scg_6.1.2_p3_patch_pkg-6.1.2.0-2230.patch",
+            "apFwVersion": "6.1.2.0.2230",
+            "apModelList": [
+              "C110",
+              "E510",
+              "H320",
+              "H350",
+              "H510",
+              "H550",
+              "M510",
+              "R310",
+              "R320",
+              "R350",
+              "R510",
+              "R550",
+              "R560",
+              "R610",
+              "R650",
+              "R710",
+              "R720",
+              "R750",
+              "R760",
+              "R850",
+              "T305E",
+              "T305I",
+              "T310C",
+              "T310D",
+              "T310N",
+              "T310S",
+              "T350C",
+              "T350D",
+              "T350SE",
+              "T610",
+              "T610S",
+              "T710",
+              "T710S",
+              "T750",
+              "T750SE",
+              "T811CM"
+            ]
+          }
+        ]
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 1,
+      "sample_item_keys": [
+        "startDateTime",
+        "fileName",
+        "apFwVersion",
+        "apModelList"
+      ],
+      "total_count": 1,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/applications": {
+      "endpoint": "/applications",
+      "method": "GET",
+      "category": "Applications",
+      "description": "Get application information",
+      "status_code": 405,
+      "response_time_ms": 30.82,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/applications",
+      "success": false,
+      "error": "{\"message\":\"Method not support handling exception (Request method 'GET' not supported)\",\"errorCode\":101,\"errorType\":\"Bad HTTP request\"}",
+      "error_type": "method_not_allowed"
+    },
+    "/dpDhcpProfiles": {
+      "endpoint": "/dpDhcpProfiles",
+      "method": "GET",
+      "category": "Network Services",
+      "description": "Get DHCP profiles",
+      "status_code": 200,
+      "response_time_ms": 7.33,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/dpDhcpProfiles",
+      "success": true,
+      "data": {
+        "totalCount": 0,
+        "hasMore": false,
+        "firstIndex": 0,
+        "list": []
+      },
+      "data_type": "dict",
+      "response_keys": [
+        "totalCount",
+        "hasMore",
+        "firstIndex",
+        "list"
+      ],
+      "list_count": 0,
+      "total_count": 0,
+      "has_more": false,
+      "first_index": 0
+    },
+    "/rogueApPolicies": {
+      "endpoint": "/rogueApPolicies",
+      "method": "GET",
+      "category": "Security",
+      "description": "Get rogue AP policies",
+      "status_code": 404,
+      "response_time_ms": 31.38,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/rogueApPolicies",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/reports/ap": {
+      "endpoint": "/reports/ap",
+      "method": "GET",
+      "category": "Reports",
+      "description": "Get AP reports",
+      "status_code": 404,
+      "response_time_ms": 29.44,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/reports/ap",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/reports/client": {
+      "endpoint": "/reports/client",
+      "method": "GET",
+      "category": "Reports",
+      "description": "Get client reports",
+      "status_code": 404,
+      "response_time_ms": 30.95,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/reports/client",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    },
+    "/reports/system": {
+      "endpoint": "/reports/system",
+      "method": "GET",
+      "category": "Reports",
+      "description": "Get system reports",
+      "status_code": 404,
+      "response_time_ms": 28.59,
+      "url": "https://3.12.57.221:8443/wsg/api/public/v9_1/reports/system",
+      "success": false,
+      "error": "{ \"success\" : false }",
+      "error_type": "not_found"
+    }
+  },
+  "summary_stats": {
+    "successful": 14,
+    "permission_denied": 7,
+    "not_found": 20,
+    "errors": 8
+  }
+}
