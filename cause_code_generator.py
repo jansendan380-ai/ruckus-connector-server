@@ -13,114 +13,117 @@ class CauseCodeGenerator:
     """Generates realistic disconnect cause codes for APs"""
     
     # Common 802.11 disconnect cause codes with realistic weights
+    # Weights based on actual event distribution from production data
     # Higher weight = more likely to occur
+    # Distribution: Code 25 (213), Code 5 (99), Code 7 (98), Code 1 (87),
+    # Code 34 (87), Code 2 (54), Code 4 (39), Code 3 (38) - Total: 826
     CAUSE_CODES = [
         {
-            "code": 1,
-            "description": "Unspecified reason",
-            "weight": 15,
-            "impactScore": 14.3
-        },
-        {
-            "code": 3,
-            "description": "Deauthenticated - leaving or left BSS",
-            "weight": 20,
-            "impactScore": 17.4
-        },
-        {
-            "code": 4,
-            "description": "Disassociated due to inactivity",
-            "weight": 18,
-            "impactScore": 13.0
+            "code": 25,
+            "description": "Disassociated due to insufficient QoS",
+            "weight": 213,  # Highest frequency - 25.8% of total
+            "impactScore": 73.7  # High impact on streaming
         },
         {
             "code": 5,
             "description": "Disassociated - AP unable to handle all STAs",
-            "weight": 25,
+            "weight": 99,  # 12.0% of total
             "impactScore": 21.5
-        },
-        {
-            "code": 6,
-            "description": "Class 2 frame received from nonauthenticated STA",
-            "weight": 5,
-            "impactScore": 8.5
         },
         {
             "code": 7,
             "description": "Class 3 frame received from nonassociated STA",
-            "weight": 5,
+            "weight": 98,  # 11.9% of total
             "impactScore": 8.5
+        },
+        {
+            "code": 1,
+            "description": "Unspecified reason",
+            "weight": 87,  # 10.5% of total
+            "impactScore": 14.3
+        },
+        {
+            "code": 34,
+            "description": "Disassociated for unspecified QoS reason",
+            "weight": 87,  # 10.5% of total
+            "impactScore": 15.2
+        },
+        {
+            "code": 2,
+            "description": "Previous authentication no longer valid",
+            "weight": 54,  # 6.5% of total
+            "impactScore": 12.5
+        },
+        {
+            "code": 4,
+            "description": "Disassociated due to inactivity",
+            "weight": 39,  # 4.7% of total
+            "impactScore": 13.0
+        },
+        {
+            "code": 3,
+            "description": "Deauthenticated - leaving or left BSS",
+            "weight": 38,  # 4.6% of total
+            "impactScore": 17.4
         },
         {
             "code": 8,
             "description": "Disassociated - STA has left BSS",
-            "weight": 22,
+            "weight": 30,  # Less common but still possible
             "impactScore": 17.8
-        },
-        {
-            "code": 15,
-            "description": "4-way handshake timeout",
-            "weight": 12,
-            "impactScore": 15.2
-        },
-        {
-            "code": 25,
-            "description": "Disassociated due to insufficient QoS",
-            "weight": 30,
-            "impactScore": 94.6
-        },
-        {
-            "code": 31,
-            "description": "Disassociated - AP unable to handle all associated STAs",
-            "weight": 20,
-            "impactScore": 19.5
-        },
-        {
-            "code": 33,
-            "description": "Disassociated - STA requesting association is not authenticated",
-            "weight": 8,
-            "impactScore": 10.2
         },
         {
             "code": 45,
             "description": "Peer unreachable",
-            "weight": 28,
+            "weight": 25,  # Less common
             "impactScore": 28.3
         },
         {
             "code": 47,
             "description": "Requested from peer",
-            "weight": 25,
+            "weight": 20,  # Less common
             "impactScore": 23.2
+        },
+        {
+            "code": 15,
+            "description": "4-way handshake timeout",
+            "weight": 15,  # Less common
+            "impactScore": 15.2
+        },
+        {
+            "code": 6,
+            "description": "Class 2 frame received from nonauthenticated STA",
+            "weight": 10,  # Rare
+            "impactScore": 8.5
         },
         {
             "code": 200,
             "description": "AP lost heartbeat with controller",
-            "weight": 35,
+            "weight": 8,  # Rare - infrastructure issue
             "impactScore": 45.0
         },
         {
             "code": 201,
             "description": "AP firmware update in progress",
-            "weight": 10,
+            "weight": 5,  # Very rare
             "impactScore": 12.0
         },
         {
             "code": 202,
             "description": "AP power failure or reboot",
-            "weight": 15,
+            "weight": 5,  # Very rare
             "impactScore": 25.0
         },
         {
             "code": 203,
             "description": "Network connectivity issue",
-            "weight": 25,
+            "weight": 5,  # Very rare
             "impactScore": 30.0
         },
         {
             "code": 204,
             "description": "AP configuration error",
-            "weight": 8,
+            "weight": 3,  # Very rare
             "impactScore": 15.0
         }
     ]
