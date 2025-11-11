@@ -31,3 +31,4 @@ class ConnectorConfig:
     collection_interval: int = 60  # seconds
     run_continuous: bool = True
 
+
