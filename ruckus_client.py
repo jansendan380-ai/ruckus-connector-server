@@ -60,8 +60,30 @@ class RuckusClient:
             else:
                 raise ValueError(f"Unsupported HTTP method: {method}")
 
+            # Log response details for debugging
+            if response.status_code == 401:
+                logger.error(
+                    f"Authentication failed (401) for {url}. "
+                    f"Response: {response.text[:200]}"
+                )
+            elif response.status_code >= 400:
+                logger.warning(
+                    f"Request returned {response.status_code} for {url}. "
+                    f"Response: {response.text[:200]}"
+                )
+
             response.raise_for_status()
             return response.json()
+        except requests.exceptions.HTTPError as e:
+            logger.error(
+                f"HTTP error {e.response.status_code} for {url}: {e}"
+            )
+            if e.response.status_code == 401:
+                logger.error(
+                    "Authentication failed. Please check credentials. "
+                    "Response: " + e.response.text[:500]
+                )
+            return None
         except requests.exceptions.RequestException as e:
             logger.error(f"Error making request to {url}: {e}")
             return None
