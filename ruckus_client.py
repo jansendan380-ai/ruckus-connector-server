@@ -22,18 +22,22 @@ class RuckusClient:
         base_url: str,
         username: str,
         password: str,
-        api_version: str = "v9_1",
+        query_api_version: str = "v9_1",
+        login_api_version: str = "v10_0",
         timeout: int = 30,
         verify_ssl: bool = False
     ):
         self.base_url = base_url.rstrip('/')
         self.username = username
         self.password = password
-        self.api_version = api_version
+        self.query_api_version = query_api_version
+        self.login_api_version = login_api_version
         self.timeout = timeout
         self.verify_ssl = verify_ssl
-        api_path = f"/wsg/api/public/{self.api_version}"
-        self.base_api_url = f"{self.base_url}{api_path}"
+        login_api_path = f"/wsg/api/public/{self.login_api_version}"
+        query_api_path = f"/wsg/api/public/{self.query_api_version}"
+        self.base_api_url_login = f"{self.base_url}{login_api_path}"
+        self.base_api_url_query = f"{self.base_url}{query_api_path}"
         self.session = requests.Session()
         self.session.verify = verify_ssl
         self._authenticated = False
@@ -41,7 +45,7 @@ class RuckusClient:
 
     def _login(self) -> bool:
         """Login to Ruckus API and establish session"""
-        login_url = f"{self.base_api_url}/session"
+        login_url = f"{self.base_api_url_login}/session"
         
         try:
             # Try POST with credentials
@@ -89,7 +93,7 @@ class RuckusClient:
         data: Optional[Dict] = None
     ) -> Optional[Dict[str, Any]]:
         """Make HTTP request to Ruckus API"""
-        url = f"{self.base_api_url}{endpoint}"
+        url = f"{self.base_api_url_query}{endpoint}"
 
         try:
             # Ensure authenticated session

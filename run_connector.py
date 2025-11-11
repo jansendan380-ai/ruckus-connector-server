@@ -23,7 +23,8 @@ def main():
         base_url="https://3.12.57.221:8443",
         username="apireadonly",
         password="SBAedge2112#",
-        api_version="v9_1",
+        query_api_version="v9_1",
+        login_api_version="v10_0",
         timeout=30,
         verify_ssl=False
     )
