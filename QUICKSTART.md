@@ -96,3 +96,4 @@ from(bucket: "wifi-streaming")
 2. Set up your FastAPI backend to query InfluxDB
 3. Configure the connector to run as a service (systemd, Windows Service, etc.)
 
+
