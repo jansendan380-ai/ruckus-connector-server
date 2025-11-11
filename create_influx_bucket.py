@@ -29,8 +29,28 @@ def create_bucket():
         client = InfluxDBClient(url=url, token=token, org=org)
         buckets_api = client.buckets_api()
 
+        # Get organization ID
+        print("Getting organization ID...")
+        orgs_api = client.organizations_api()
+        organizations = orgs_api.find_organizations()
+        org_id = None
+
+        for org_item in organizations.orgs:
+            if org_item.name == org:
+                org_id = org_item.id
+                print(f"  ✓ Found organization '{org}' (ID: {org_id})")
+                break
+
+        if not org_id:
+            print(f"  ✗ Organization '{org}' not found!")
+            print(f"  Available organizations:")
+            for org_item in organizations.orgs:
+                print(f"    - {org_item.name} (ID: {org_item.id})")
+            client.close()
+            return
+
         # Check if bucket exists
-        print("Checking if bucket exists...")
+        print("\nChecking if bucket exists...")
         buckets = buckets_api.find_buckets()
         existing_bucket = None
 
@@ -54,7 +74,7 @@ def create_bucket():
             bucket = Bucket(
                 name=bucket_name,
                 retention_rules=[retention_rules],
-                org_id=None  # Will use org from client
+                org_id=org_id
             )
 
             created_bucket = buckets_api.create_bucket(bucket=bucket)
