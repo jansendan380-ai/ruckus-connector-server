@@ -233,6 +233,8 @@ class WiFiConnector:
             point = point.time(timestamp)
             point = point.tag("zoneId", zone.get("id", ""))
             point = point.tag("zoneName", zone.get("name", ""))
+            point = point.tag("domainId", zone.get("domainId", ""))
+            point = point.tag("domainName", zone.get("domainName", ""))
             point = point.field("totalAPs", zone.get("totalAPs", 0))
             point = point.field("connectedAPs", zone.get("connectedAPs", 0))
             point = point.field("disconnectedAPs", zone.get("disconnectedAPs", 0))

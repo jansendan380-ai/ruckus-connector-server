@@ -64,6 +64,8 @@ Zone-level metrics and statistics.
 **Tags:**
 - `zoneId` (string) - Unique zone identifier
 - `zoneName` (string) - Zone name
+- `domainId` (string) - Domain identifier
+- `domainName` (string) - Domain name
 
 **Fields:**
 - `totalAPs` (integer) - Total APs in zone

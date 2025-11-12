@@ -29,6 +29,8 @@ class DataTransformer:
         return {
             "id": ruckus_zone.get("id", ""),
             "name": ruckus_zone.get("zoneName", ""),
+            "domainId": ruckus_zone.get("domainId", ""),
+            "domainName": ruckus_zone.get("domainName", ""),
             "totalAPs": total_aps,
             "connectedAPs": connected_aps,
             "disconnectedAPs": disconnected_aps,
