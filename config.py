@@ -28,7 +28,7 @@ class InfluxConfig:
 @dataclass
 class ConnectorConfig:
     """Connector service configuration"""
-    collection_interval: int = 60  # seconds
+    collection_interval: int = 1800  # seconds (30 minutes)
     run_continuous: bool = True
 
 

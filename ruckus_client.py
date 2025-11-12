@@ -159,8 +159,39 @@ class RuckusClient:
         zones: List[Dict[str, Any]] = []
         page = 1
         while True:
-            payload = {"limit": limit, "page": page}
+            payload: Dict[str, Any] = {
+                "limit": limit,
+                "page": page,
+                "withTotalCount": True,
+                "sort": [
+                    {
+                        "type": "STRING",
+                        "attribute": "zoneName",
+                        "descending": False
+                    }
+                ],
+                "attributes": [
+                    "id",
+                    "zoneName",
+                    "description",
+                    "domainId",
+                    "domainName",
+                    "apCountOnline",
+                    "apCountOffline",
+                    "apCountFlagged",
+                    "apCountProvisioned",
+                    "clientCount",
+                    "meshEnabled",
+                    "meshSSID",
+                    "createdTime",
+                    "lastModifiedTime"
+                ]
+            }
             response = self._make_request(endpoint, method="POST", data=payload)
+            if (not response or "list" not in response) and page == 1:
+                # Fallback for controllers that do not support attribute selection
+                fallback_payload = {"limit": limit, "page": page}
+                response = self._make_request(endpoint, method="POST", data=fallback_payload)
             if not response or "list" not in response:
                 break
             batch = response.get("list", []) or []

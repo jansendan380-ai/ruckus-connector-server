@@ -509,7 +509,7 @@ from(bucket: "demo")
 
 ## Data Collection Frequency
 
-- **Collection Interval**: 60 seconds (configurable)
+- **Collection Interval**: 1800 seconds (30 minutes, configurable)
 - **Timestamp**: UTC
 - **Retention**: Configurable in InfluxDB
 

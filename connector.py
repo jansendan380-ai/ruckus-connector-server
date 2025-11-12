@@ -26,7 +26,7 @@ class WiFiConnector:
         self,
         ruckus_client: RuckusClient,
         influx_writer: InfluxWriter,
-        collection_interval: int = 60  # seconds
+        collection_interval: int = 1800  # seconds (30 minutes)
     ):
         self.ruckus = ruckus_client
         self.influx = influx_writer
@@ -421,11 +421,11 @@ def main():
     logger.info("Ruckus connection successful")
     
     # Create connector
-    connector = WiFiConnector(
-        ruckus_client=ruckus_client,
-        influx_writer=influx_writer,
-        collection_interval=60  # Collect every 60 seconds
-    )
+        connector = WiFiConnector(
+            ruckus_client=ruckus_client,
+            influx_writer=influx_writer,
+            collection_interval=1800  # Collect every 30 minutes
+        )
     
     # Run once or continuously
     try:

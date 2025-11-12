@@ -51,7 +51,7 @@ def main():
     connector = WiFiConnector(
         ruckus_client=ruckus_client,
         influx_writer=influx_writer,
-        collection_interval=60  # Collect every 60 seconds
+        collection_interval=1800  # Collect every 30 minutes
     )
 
     # Check command line arguments
