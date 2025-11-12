@@ -421,11 +421,11 @@ def main():
     logger.info("Ruckus connection successful")
     
     # Create connector
-        connector = WiFiConnector(
-            ruckus_client=ruckus_client,
-            influx_writer=influx_writer,
-            collection_interval=1800  # Collect every 30 minutes
-        )
+    connector = WiFiConnector(
+        ruckus_client=ruckus_client,
+        influx_writer=influx_writer,
+        collection_interval=1800  # Collect every 30 minutes
+    )
     
     # Run once or continuously
     try:
