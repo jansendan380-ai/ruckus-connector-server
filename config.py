@@ -22,7 +22,7 @@ class InfluxConfig:
     url: str = "http://20.64.233.185:8086"
     org: str = "wifi-org"
     bucket: str = "demo"
-    token: str = "vmEv3xPIBXM0iiW6rBQ8KKPZB7hdbjqbPJVtN0mrO0Cn96RhTGWP647J9K-lo-6mmB0_sQRvHLDdFgHrGb8GRQ=="
+    token: str = "NVmRj218iGEZbkWEVUokEO2AP3JTasaVhbfEhGk_6okfepun8HzWBxfyb1nEk0ENNnXuU8qoJsFy7m2ykcyrsA=="
 
 
 @dataclass
