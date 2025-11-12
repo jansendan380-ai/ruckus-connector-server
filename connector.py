@@ -294,18 +294,6 @@ class WiFiConnector:
             point = point.tag("apName", client.get("apName", ""))
             point = point.tag("ssid", client.get("ssid", ""))
             point = point.tag("osType", client.get("osType", ""))
-            ip_address = (
-                client.get("ipAddress")
-                or client.get("clientIp")
-                or client.get("clientIpv4")
-            )
-            if ip_address:
-                clean_ip = str(ip_address).split("/", 1)[0].strip()
-                point = point.tag("ipAddress", clean_ip)
-            ipv6_address = client.get("ipv6Address")
-            if ipv6_address:
-                clean_ipv6 = str(ipv6_address).split("/", 1)[0].strip()
-                point = point.tag("ipv6Address", clean_ipv6)
             
             point = point.field("txBytes", client.get("txBytes", 0) or 0)
             point = point.field("rxBytes", client.get("rxBytes", 0) or 0)
