@@ -221,16 +221,16 @@ Client/device connection information and metrics.
 - `apMac` (string) - Associated AP MAC address
 - `apName` (string) - Associated AP name
 - `ssid` (string) - SSID/WLAN name
-- `osType` (string) - Operating system type
+- `osType` (string) - Detected operating system
 
 **Fields:**
-- `txBytes` (integer) - Transmitted bytes
-- `rxBytes` (integer) - Received bytes
-- `txRxBytes` (integer) - Total bytes (tx + rx)
-- `rssi` (integer) - Received signal strength indicator (dBm)
-- `snr` (integer) - Signal-to-noise ratio (dB)
-- `uplinkRate` (integer) - Uplink data rate (Mbps)
-- `downlinkRate` (integer) - Downlink data rate (Mbps)
+- `txBytes` (integer) - Transmitted bytes (total)
+- `rxBytes` (integer) - Received bytes (total)
+- `txRxBytes` (integer) - Total bytes (tx + rx). Populated when controller provides aggregate field; otherwise `txBytes + rxBytes`.
+- `rssi` (float) - Received signal strength indicator in dBm (negative values allowed)
+- `snr` (float) - Signal-to-noise ratio (dB)
+- `uplinkRate` (float) - Uplink data rate (Mbps)
+- `downlinkRate` (float) - Downlink data rate (Mbps)
 
 **Example Point:**
 ```
@@ -394,7 +394,7 @@ fields: {
 
 **Query Examples:**
 ```flux
-// Get all disconnect causes
+//    all disconnect causes
 from(bucket: "demo")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "ap_disconnect_cause")

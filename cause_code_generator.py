@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class CauseCodeGenerator:
     """Generates realistic disconnect cause codes for APs"""
-    
+
     # Common 802.11 disconnect cause codes with realistic weights
     # Weights based on actual event distribution from production data
     # Higher weight = more likely to occur
@@ -127,103 +127,129 @@ class CauseCodeGenerator:
             "impactScore": 15.0
         }
     ]
-    
+
     def __init__(self, seed: Optional[int] = None):
         """Initialize the cause code generator"""
         if seed is not None:
             random.seed(seed)
-        self._build_weighted_list()
-    
-    def _build_weighted_list(self):
-        """Build a weighted list for random selection"""
-        self.weighted_codes = []
-        for cause in self.CAUSE_CODES:
-            # Add each code multiple times based on its weight
-            for _ in range(cause["weight"]):
-                self.weighted_codes.append(cause)
-    
-    def generate_cause_code(self, ap_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        self._build_weighted_data()
+
+    def _build_weighted_data(self):
+        """Build weighted data structures for random selection"""
+        # Extract codes and weights for use with random.choices()
+        self.cause_codes_list = [c["code"] for c in self.CAUSE_CODES]
+        self.weights = [c["weight"] for c in self.CAUSE_CODES]
+        # Create a lookup dict for quick access to full cause code data
+        self.cause_code_dict = {c["code"]: c for c in self.CAUSE_CODES}
+
+    def generate_cause_code(
+        self, ap_data: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
         """
         Generate a realistic cause code for a disconnected AP
-        
+
         Args:
             ap_data: Optional AP data to influence cause code selection
-            
+
         Returns:
             Dictionary with code, description, and impactScore
         """
-        # Select a random cause code based on weights
-        selected = random.choice(self.weighted_codes)
-        
+        # Select a random cause code based on weights using random.choices()
+        # This ensures proper weighted probability distribution
+        selected_code = random.choices(
+            self.cause_codes_list,
+            weights=self.weights,
+            k=1
+        )[0]
+
+        selected = self.cause_code_dict[selected_code]
+
         # Create a copy to avoid modifying the original
         cause_code = {
             "code": selected["code"],
             "description": selected["description"],
             "impactScore": selected["impactScore"]
         }
-        
+
         # Optionally adjust based on AP characteristics
         if ap_data:
-            # If AP has been offline for a long time, more likely to be network/power issue
-            # This is a simplified heuristic
+            # If AP has been offline for a long time, more likely to be
+            # network/power issue. This is a simplified heuristic.
             model = ap_data.get("model") or ""
             model = str(model).upper() if model else ""
-            if model and ("T" in model or "H" in model):  # Outdoor/Industrial models
+            # Outdoor/Industrial models
+            if model and ("T" in model or "H" in model):
                 # More likely to have power/network issues
                 if random.random() < 0.3:
-                    power_codes = [c for c in self.CAUSE_CODES if "power" in c["description"].lower() or 
-                                 "network" in c["description"].lower() or 
-                                 "heartbeat" in c["description"].lower()]
+                    power_codes = [
+                        c for c in self.CAUSE_CODES
+                        if ("power" in c["description"].lower() or
+                            "network" in c["description"].lower() or
+                            "heartbeat" in c["description"].lower())
+                    ]
                     if power_codes:
-                        selected = random.choice(power_codes)
+                        # Use weighted selection for power codes too
+                        power_codes_list = [c["code"] for c in power_codes]
+                        power_weights = [c["weight"] for c in power_codes]
+                        selected_code = random.choices(
+                            power_codes_list,
+                            weights=power_weights,
+                            k=1
+                        )[0]
+                        selected = self.cause_code_dict[selected_code]
                         cause_code = {
                             "code": selected["code"],
                             "description": selected["description"],
                             "impactScore": selected["impactScore"]
                         }
-        
+
         return cause_code
-    
+
     def generate_cause_codes_for_aps(
-        self, 
+        self,
         disconnected_aps: List[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
         """
         Generate cause codes for a list of disconnected APs
-        
+
         Args:
             disconnected_aps: List of disconnected AP dictionaries
-            
+
         Returns:
             List of cause code dictionaries with AP information
         """
         cause_codes = []
-        
+
         for ap in disconnected_aps:
-            # Handle different field name variations, ensuring None values become empty strings
-            ap_mac = (ap.get("apMac") or 
-                     ap.get("mac") or 
-                     ap.get("apMacAddress") or
-                     ap.get("macAddress") or "")
+            # Handle different field name variations, ensuring None values
+            # become empty strings
+            ap_mac = (
+                ap.get("apMac") or
+                ap.get("mac") or
+                ap.get("apMacAddress") or
+                ap.get("macAddress") or ""
+            )
             ap_mac = str(ap_mac) if ap_mac else ""
-            
-            ap_name = (ap.get("deviceName") or 
-                      ap.get("name") or
-                      ap.get("apName") or "")
+
+            ap_name = (
+                ap.get("deviceName") or
+                ap.get("name") or
+                ap.get("apName") or ""
+            )
             ap_name = str(ap_name) if ap_name else ""
-            
+
             zone_id = ap.get("zoneId") or ""
             zone_id = str(zone_id) if zone_id else ""
-            
+
             zone_name = ap.get("zoneName") or ""
             zone_name = str(zone_name) if zone_name else ""
-            
+
             model = ap.get("model") or ""
             model = str(model) if model else ""
-            
+
             # Generate cause code
             cause_code = self.generate_cause_code(ap)
-            
+
             # Combine AP info with cause code
             cause_codes.append({
                 "apMac": ap_mac,
@@ -235,9 +261,9 @@ class CauseCodeGenerator:
                 "causeDescription": cause_code["description"],
                 "impactScore": cause_code["impactScore"]
             })
-        
+
         return cause_codes
-    
+
     def get_all_cause_codes(self) -> List[Dict[str, Any]]:
         """Get all available cause codes"""
         return [
@@ -248,4 +274,3 @@ class CauseCodeGenerator:
             }
             for c in self.CAUSE_CODES
         ]
-
